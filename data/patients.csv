@@ -1,0 +1,6 @@
+id,nom,prenom,mail,telephone,adresse,ville,zip,date_naissance,sexe,username,id_medecin
+1,mahracha,Abdelhakim,abdelhakim22mahracha@gmail.com,0656545789,"RUE 4",limoges,87000,2002-06-11,Homme,abdel,2
+2,Lori,Maria,maria22@gmail.com,0634543425,"rue bordeaux",Toulouse,Jack,2024-01-03,Femme,lori,1
+3,Lopez,Maria,maria22@gmail.com,0634543425,"rue bordeaux",Toulouse,33000,2024-01-15,Femme,maria224,1
+4,Loranzo,soso,soso22@gmail.com,0634543425,"rue bordeaux",Toulouse,maria22,2024-01-08,Femme,soso,2
+5,Florian,Alcantara,flori21@gmail.com,0567654878,"2 rue carmen",Marseille,44000,2024-01-14,Homme,flori21,5

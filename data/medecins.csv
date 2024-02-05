@@ -1,0 +1,6 @@
+id,nom,prenom,mail,telephone,adresse,ville,zip,date_naissance,sexe,username
+1,Lori,Maria,maria22@gmail.com,0634543425,"rue bordeaux",Toulouse,31000,2024-01-07,Femme,marie21
+2,Lopez,Maria,maria22@gmail.com,0634543425,"rue bordeaux",Toulouse,33000,2024-01-15,Femme,maria22
+3,laura,trest,laura@gmail.com,0987876765,rue1,limoges,87000,2024-01-23,Femme,laura,
+4,Paula,Jimenuez,paula10@gamail.com,0765454343,"9 Bis rue de culture",Paris,maria22,2024-01-02,Femme,paula10
+5,Jaun,Robin,robin@gmail.com,0534234356,"RUE Nicolas ",limoges,87000,1979-04-10,Homme,robin24
