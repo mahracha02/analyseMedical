@@ -4,6 +4,10 @@ function controleurPrincipal($action){
     $lesActions["defaut"] = "connexion.php";
     $lesActions["dashboardMedecin"] = "dashboardMedecin.php";
     $lesActions["dashboardPatient"] = "dashboardPatient.php";
+    $lesActions["dashboardPrincipalPatient"] = "dashboardPrincipalPatient.php";
+    $lesActions["AnalyseSaisie"] = "analyseSaisie.php";
+    $lesActions["messagePatient"] = "messagePatient.php";
+    $lesActions["comptePatient"] = "comptePatient.php";
     $lesActions['aPropos'] = 'Apropos.php';
     $lesActions['contact'] = 'contact.php';
     $lesActions['connexion'] = 'connexion.php';

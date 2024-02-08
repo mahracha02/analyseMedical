@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["seConnecter"])) {
             fclose($fileMedecin);
 
             if (isUserInCSV($csvDataPatient, $username)) {
-                header("Location: ./?action=dashboardPatient");
+                header("Location: ./?action=dashboardPrincipalPatient");
                 $userDetailsPatient = getPatientDetails($username);
                 if ($userDetailsPatient !== false) {
                     $_SESSION['patient_details'] = $userDetailsPatient;
@@ -111,7 +111,7 @@ if (isset($_SESSION["username"]) ){
         fclose($fileMedecin);
 
         if(isUserInCSV($csvDataPatient, $username)){
-            header("Location: ./?action=dashboardPatient");
+            header("Location: ./?action=dashboardPrincipalPatient");
             exit();
         }
         elseif(isUserInCSV($csvDataMedecin, $username)){
