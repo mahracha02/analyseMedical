@@ -118,6 +118,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkboxNumerationPlaquettaire = isset($_POST['checkboxNumerationPlaquettaire']) ? $_POST['checkboxNumerationPlaquettaire'] : null;
     $checkboxBiochimie = isset($_POST['checkboxBiochimie']) ? $_POST['checkboxBiochimie'] : null;
     $checkboxIonogrammeSanguin = isset($_POST['checkboxIonogrammeSanguin']) ? $_POST['checkboxIonogrammeSanguin'] : null;
+    $checkboxEndocrinologie = isset($_POST['checkboxEndocrinologie']) ? $_POST['checkboxEndocrinologie'] : null;
+    $checkboxInfectiologie = isset($_POST['checkboxInfectiologie']) ? $_POST['checkboxInfectiologie'] : null;
+    $checkboxMarqueursTumoraux = isset($_POST['checkboxMarqueursTumoraux']) ? $_POST['checkboxMarqueursTumoraux'] : null;
+    $checkboxBilanHepatique = isset($_POST['checkboxBilanHepatique']) ? $_POST['checkboxBilanHepatique'] : null;
 
     if(isset($_POST['suivant'])){
               
@@ -136,6 +140,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <!-- Les formulaires seront ajoutés ici dynamiquement -->
 
                                         <?php
+                                        if($checkboxHematologie == "hematologie"){
+                                            ?>
+                                            <div id="hematologie" >
+                                                <div class="row mt-3">
+                                                    <div class="col-md-12 text-center"> <!-- Utilisation de la classe text-center pour centrer horizontalement -->
+                                                        <h4 class="my-0 mx-0 py-2 mb-4" style="border: 2px solid black; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> <!-- Utilisation de la classe my-0 pour supprimer les marges par défaut -->
+                                                            <strong>HEMATOLOGIE</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
                                         if($checkboxHematologie == "hematologie" && $checkboxHemogramme == "hemogramme"){
                                             ?>
                                             <div id="hemogramme">
@@ -373,7 +390,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         if($checkboxIonogrammeSanguin == "ionogramme"){
                                             ?>
                                             <div id="ionogramme" >
-                                                <h4><strong>IONOGRAMME SANGUIN</strong></h4>
+                                                <div class="row mt-5">
+                                                    <div class="col-md-12 text-center"> <!-- Utilisation de la classe text-center pour centrer horizontalement -->
+                                                        <h4 class="my-0 mx-0 py-2 mb-4" style="border: 2px solid black; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> <!-- Utilisation de la classe my-0 pour supprimer les marges par défaut -->
+                                                            <strong>IONOGRAMME SANGUIN</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
                                                 <div class="row mb-3">
                                                     <div class="col-md-6">
                                                         <label for="" class="form-label">Sodium plasmatique:</label>
@@ -437,7 +460,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         if($checkboxBiochimie == "biochimie"){
                                             ?>
                                             <div id="biochimie">
-                                                <h4><strong>BIOCHIMIE SANGUINE</strong></h4>
+                                                <div class="row mt-5">
+                                                    <div class="col-md-12 text-center"> <!-- Utilisation de la classe text-center pour centrer horizontalement -->
+                                                        <h4 class="my-0 mx-0 py-2 mb-4" style="border: 2px solid black; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> <!-- Utilisation de la classe my-0 pour supprimer les marges par défaut -->
+                                                            <strong>BIOCHIMIE</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
                                                 <div class="row mb-3">
                                                     <div class="col-md-6">
                                                         <label for="" class="form-label">Urée :</label>
@@ -511,6 +540,933 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             </div> 
                                         <?php
                                         }
+                                        if($checkboxEndocrinologie == "endocrinologie") { ?>
+                                            <div id="endocrinologie">
+                                                <div class="row mt-5">
+                                                    <div class="col-md-12 text-center"> <!-- Utilisation de la classe text-center pour centrer horizontalement -->
+                                                        <h4 class="my-0 mx-0 py-2 mb-4" style="border: 2px solid black; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> <!-- Utilisation de la classe my-0 pour supprimer les marges par défaut -->
+                                                            <strong>ENDOCRINOLOGIE</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+
+                                                <h4><strong>Bilan Glycémique</strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Glycémie :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="glycemie">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">g/L</small>
+                                                    </div>  
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.70 - 1.10)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Glycémie à jeun :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="glycemieAJean">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">g/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.70 - 1.10)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">hemoglobine glyquée (HbA1c):</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="hemoglobineGlyquee">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">%</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(4.0 - 6.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Thyroïde</strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">TSH ultra sensible :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="TSHUltraSensible">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">mUI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.27 - 4.20)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">T3 libre :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="T3Libre">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">pmol/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(3.10 - 6.80)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">T4 libre :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="T4Libre">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">pmol/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(12.0 - 22.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Anticorps anti-TSH :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="anticorpsAntiTSH">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 4.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Anticorps anti-TPO :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="anticorpsAntiTPO">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 9.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Anticorps anti-Thyroglobuline :</label>
+                                                    </div>  
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="anticorpsAntiThyroglobuline">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 4.0)</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
+                                        if($checkboxInfectiologie == "infectiologie") { ?>
+                                            <div id="infectiologie">
+                                                <div class="row mt-5">
+                                                    <div class="col-md-12 text-center"> <!-- Utilisation de la classe text-center pour centrer horizontalement -->
+                                                        <h4 class="my-0 mx-0 py-2 mb-4" style="border: 2px solid black; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> <!-- Utilisation de la classe my-0 pour supprimer les marges par défaut -->
+                                                            <strong>INFECTIOLOGIE</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie HIV</strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-HIV1+2 et Ag P24 :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiHIV1+2AgP24">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-HIV1+2 :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiHIV1+2">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ag P24 :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="agP24">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Western Blot :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="westernBlot">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">ARN HIV :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="arnHIV">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie de l'hépatite virale A </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">IgM anti-HAV :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="IgMAntiHAV">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie de l'hépatite virale B </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ag HBs :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="agHBs">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-HBs :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiHBs">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-HBc Total :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiHBcTotal">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie de l'hépatite virale C </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-HCV :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiHCV">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie de la syphilis </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">TPHA :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="TPHA">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">VDRL :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="VDRL">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>  
+                                                </div>
+                                                <h4><strong>Sérologie Mononucléose infectieuse </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">MINI test :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="MINITest">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-VCA IgM :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiVCAIgM">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-EBNA IgG :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiEBNAIgG">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie CMV </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-CMV IgM :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiCMVIgM">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-CMV IgG :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiCMVIgG">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie Toxoplasmose </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-Toxoplasme IgM :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiToxoplasmeIgM">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-Toxoplasme IgG :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiToxoplasmeIgG">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <h4><strong>Sérologie Rubéole </strong></h4>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-Rubéole IgM :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiRubeoleIgM">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ac anti-Rubéole IgG :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="acAntiRubeoleIgG">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
+                                        if($checkboxMarqueursTumoraux == "marqueursTumoraux") { ?>
+                                            <div id="marqueursTumoraux">
+                                                <div class="row mt-5">
+                                                    <div class="col-md-12 text-center"> <!-- Utilisation de la classe text-center pour centrer horizontalement -->
+                                                        <h4 class="my-0 mx-0 py-2 mb-4" style="border: 2px solid black; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> <!-- Utilisation de la classe my-0 pour supprimer les marges par défaut -->
+                                                            <strong>MARQUEURS TUMORAUX</strong>
+                                                        </h4>
+                                                    </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Calcitonine :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="calcitonine">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">pg/mL</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 5.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">CA 15-3 :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="CA15-3">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 30.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">CA 125 :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="CA125">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 35.0)</small>
+                                                    </div>  
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">CA 19-9 :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="CA19-9">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 37.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">AFP :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="AFP">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">ng/mL</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 10.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">HCG :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="HCG">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 5.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">PSA Total :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="PSATotal">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">ng/mL</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 4.0)</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
+                                        if($checkboxBilanHepatique == "bilanHepatique") { ?>
+                                            <div id="bilanHepatique">
+                                                <div class="row mt-5">
+                                                    <div class="col-md-12 text-center"> <!-- Utilisation de la classe text-center pour centrer horizontalement -->
+                                                        <h4 class="my-0 mx-0 py-2 mb-4" style="border: 2px solid black; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"> <!-- Utilisation de la classe my-0 pour supprimer les marges par défaut -->
+                                                            <strong>BILAN HEPATIQUE</strong>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">ASAT (Transaminases SGOT) :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="ASAT">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 40)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">ALAT (Transaminases SGPT) :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="ALAT">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 40)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Gamma-GT :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="gammaGT">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(8 - 61)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">PAL (Phosphatases alcalines) :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="PAL">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(30 - 120)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">5’NT (5’Nucléotidase) :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="5NT">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(5 - 70)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Bilirubines Libres :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="bilirubinesLibres">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">mg/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 17)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Bilirubines Conjugées :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="bilirubinesConjuguees">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">mg/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 5)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Bilirubine totale :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="bilirubineTotale">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">mg/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(5 - 21)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">TP (Temps de Prothrombine) :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="TP">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">%</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(70 - 120)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Facteur V :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="facteurV">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">%</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(70 - 120)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Albumine :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="albumine">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">g/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(35 - 50)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Alpha-1-Antitrypsine :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="alpha1Antitrypsine">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">g/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(2.8 - 4.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Anticorps Antimichondriaux :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="anticorpsAntimichondriaux">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 20)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Ceruleoplasmine :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="ceruleoplasmine">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">g/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.2 - 0.6)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Cuprurie 24h :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="cuprurie24h">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">umol/24h</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.0 - 1.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">TSH us :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="TSHus">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">mUI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.3 - 4.2)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">T3 Libre :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="T3Libre">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">ng/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(2.6 - 5.7)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">T4 Libre :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="T4Libre">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">ng/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(9.0 - 19.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Hb :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="Hb">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">g/dL</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(120 - 160)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Reticulocytes :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="reticulocytes">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">G/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.5 - 1.5)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Schizocytes :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="schizocytes">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">/mm3</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 1)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">Haptoglobine :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="haptoglobine">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">g/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0.3 - 2.0)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">IgA anti-Glutamases :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="IgAantiGlutamases">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 10)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">IgM anti-VCA :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="IgMantiVCA">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 10)</small>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="" class="form-label">ARN V :</label>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="" name="ARNV">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <small class="form-text text-muted">UI/L</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <small class="form-text text-muted">(0 - 10)</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                        }
                                         ?>
                                         
 
@@ -518,7 +1474,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="row mb-3">
                                         <div class="col-md-12">
                                             <label for="" class="form-label">Observations :</label>
-                                            <textarea class="form-control" id="" rows="3"></textarea>
+                                            <textarea class="form-control" id="" rows="3" ></textarea>
                                         </div>
                                     </div>
 
@@ -529,6 +1485,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <input type="hidden" name="checkboxNumerationPlaquettaire" value="<?php echo $checkboxNumerationPlaquettaire; ?>">
                                     <input type="hidden" name="checkboxBiochimie" value="<?php echo $checkboxBiochimie; ?>">
                                     <input type="hidden" name="checkboxIonogrammeSanguin" value="<?php echo $checkboxIonogrammeSanguin; ?>">
+                                    <input type="hidden" name="checkboxEndocrinologie" value="<?php echo $checkboxEndocrinologie; ?>">
+                                    <input type="hidden" name="checkboxInfectiologie" value="<?php echo $checkboxInfectiologie; ?>">
+                                    <input type="hidden" name="checkboxMarqueursTumoraux" value="<?php echo $checkboxMarqueursTumoraux; ?>">
+                                    <input type="hidden" name="checkboxBilanHepatique" value="<?php echo $checkboxBilanHepatique; ?>">
                                     
 
                                     <!-- 3 boutons: PRECEDENT, ANULLER, VALIDER -->
@@ -860,6 +1820,227 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             fclose($fichierIonogramme); 
         }
 
+        if($checkboxEndocrinologie == "endocrinologie") {
+            $csvEndocrinologie = fopen("data/Analyses/endocrinologie.csv", "r");
+
+                $newId = 1; // Valeur par défaut si le fichier est vide
+
+                // Parcourir chaque ligne du fichier
+                while ($row = fgetcsv($csvEndocrinologie)) {
+                    // $row est un tableau représentant une ligne du CSV
+                    // La première colonne (index 0) contient l'ID
+
+                    // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
+                    $newId = intval($row[0]);
+                }
+                $newId++;
+
+            
+                $TSHUltraSensible=$_POST['TSHUltraSensible'];
+                $T4Libre=$_POST['T4Libre'];
+                $user=$_SESSION['username'];
+
+                //saisie dans le fichier csv
+                $fichierEndocrinologie = fopen("data/Analyses/endocrinologie.csv", "a");
+
+                fputcsv($fichierEndocrinologie, [
+                    $newId,
+                    $TSHUltraSensible,
+                    $T4Libre,
+                    $user,
+                ]);
+
+                //affichage de page de succes
+                if($fichierEndocrinologie){
+                    //message de succes
+                    echo 
+                    '<div class="container text-center" style="width: 600px; margin-top:300px">
+                        <div class="row justify-content-center" >
+                            <div class="col-md-9">
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">Succès !</h4>
+                                    <p>Votre analyse a été saisie avec succès.</p>
+                                    <hr>
+                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+
+                    exit();
+                } else {
+                    header("Location: ./?action=dashboardPatient&error=1");
+                    //message d'erreur
+                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
+                    exit();
+                }
+        }
+
+        if($checkboxInfectiologie == "infectiologie") {
+            $csvInfectiologie = fopen("data/Analyses/infectiologie.csv", "r");
+
+                $newId = 1; // Valeur par défaut si le fichier est vide
+
+                // Parcourir chaque ligne du fichier
+                while ($row = fgetcsv($csvInfectiologie)) {
+                    // $row est un tableau représentant une ligne du CSV
+                    // La première colonne (index 0) contient l'ID
+
+                    // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
+                    $newId = intval($row[0]);
+                }
+                $newId++;
+
+            
+                $CRPUltraSensible=$_POST['CRPUltraSensible'];
+                $user=$_SESSION['username'];
+
+                //saisie dans le fichier csv
+                $fichierInfectiologie = fopen("data/Analyses/infectiologie.csv", "a");
+
+                fputcsv($fichierInfectiologie, [
+                    $newId,
+                    $CRPUltraSensible,
+                    $user,
+                ]);
+
+                //affichage de page de succes
+                if($fichierInfectiologie){
+                    //message de succes
+                    echo 
+                    '<div class="container text-center" style="width: 600px; margin-top:300px">
+                        <div class="row justify-content-center" >
+                            <div class="col-md-9">
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">Succès !</h4>
+                                    <p>Votre analyse a été saisie avec succès.</p>
+                                    <hr>
+                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+
+                    exit();
+                } else {
+                    header("Location: ./?action=dashboardPatient&error=1");
+                    //message d'erreur
+                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
+                    exit();
+                }
+        }
+
+        if($checkboxMarqueursTumoraux == "marqueursTumoraux") {
+            $csvMarqueursTumoraux = fopen("data/Analyses/marqueursTumoraux.csv", "r");
+
+                $newId = 1; // Valeur par défaut si le fichier est vide
+
+                // Parcourir chaque ligne du fichier
+                while ($row = fgetcsv($csvMarqueursTumoraux)) {
+                    // $row est un tableau représentant une ligne du CSV
+                    // La première colonne (index 0) contient l'ID
+
+                    // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
+                    $newId = intval($row[0]);
+                }
+                $newId++;
+
+            
+                $PSATotal=$_POST['PSATotal'];
+                $user=$_SESSION['username'];
+
+                //saisie dans le fichier csv
+                $fichierMarqueursTumoraux = fopen("data/Analyses/marqueursTumoraux.csv", "a");
+
+                fputcsv($fichierMarqueursTumoraux, [
+                    $newId,
+                    $PSATotal,
+                    $user,
+                ]);
+
+                //affichage de page de succes
+                if($fichierMarqueursTumoraux){
+                    //message de succes
+                    echo 
+                    '<div class="container text-center" style="width: 600px; margin-top:300px">
+                        <div class="row justify-content-center" >
+                            <div class="col-md-9">
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">Succès !</h4>
+                                    <p>Votre analyse a été saisie avec succès.</p>
+                                    <hr>
+                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+
+                    exit();
+                } else {
+                    header("Location: ./?action=dashboardPatient&error=1");
+                    //message d'erreur
+                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
+                    exit();
+                }
+        }
+
+        if($checkboxBilanHepatique == "bilanHepatique") {
+            $csvBilanHepatique = fopen("data/Analyses/bilanHepatique.csv", "r");
+
+                $newId = 1; // Valeur par défaut si le fichier est vide
+
+                // Parcourir chaque ligne du fichier
+                while ($row = fgetcsv($csvBilanHepatique)) {
+                    // $row est un tableau représentant une ligne du CSV
+                    // La première colonne (index 0) contient l'ID
+
+                    // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
+                    $newId = intval($row[0]);
+                }
+                $newId++;
+
+            
+                $bilirubineTotale=$_POST['bilirubineTotale'];
+                $user=$_SESSION['username'];
+
+                //saisie dans le fichier csv
+                $fichierBilanHepatique = fopen("data/Analyses/bilanHepatique.csv", "a");
+
+                fputcsv($fichierBilanHepatique, [
+                    $newId,
+                    $bilirubineTotale,
+                    $user,
+                ]);
+
+                //affichage de page de succes
+                if($fichierBilanHepatique){
+                    //message de succes
+                    echo 
+                    '<div class="container text-center" style="width: 600px; margin-top:300px">
+                        <div class="row justify-content-center" >
+                            <div class="col-md-9">
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">Succès !</h4>
+                                    <p>Votre analyse a été saisie avec succès.</p>
+                                    <hr>
+                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+
+                    exit();
+                } else {
+                    header("Location: ./?action=dashboardPatient&error=1");
+                    //message d'erreur
+                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
+                    exit();
+                }
+        }
+
+
+
+
         
         
         
@@ -872,6 +2053,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             
         }
+
+
 
         
         ?>
