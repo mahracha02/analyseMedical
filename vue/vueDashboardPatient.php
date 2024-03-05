@@ -15,6 +15,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-PkJeKlZZfM+uaDyZkldA9e2UGjT2iVf6IImPqvRrWajqM71V2L3U1bXNqQ8C1cj" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WySz5lq7Jqz6MlVz92RBC2Ajqj2Jsd6MlN" crossorigin="anonymous"></script>
@@ -489,52 +490,7 @@ session_start();
             }
         }
     });
-            /*
-            document.addEventListener("DOMContentLoaded", function() {
-            // Fonction pour masquer tous les contenus
-            function hideAllContents() {
-                document.getElementById("dashboardContent").classList.add("hidden");
-                document.getElementById("accountContent").classList.add("hidden");
-                document.getElementById("messagesContent").classList.add("hidden");
-                document.getElementById("statisticsContent").classList.add("hidden");
-            }
-
-            // Fonction pour afficher le contenu du tableau de bord
-            function showDashboardContent() {
-                hideAllContents();
-                document.getElementById("dashboardContent").classList.remove("hidden");
-            }
-
-            // Fonction pour afficher le contenu du compte
-            function showAccountContent() {
-                hideAllContents();
-                document.getElementById("accountContent").classList.remove("hidden");
-            }
-
-            // Fonction pour afficher le contenu des messages
-            function showMessagesContent() {
-                hideAllContents();
-                document.getElementById("messagesContent").classList.remove("hidden");
-            }
-
-            // Fonction pour afficher le contenu des statistiques
-            function showStatisticsContent() {
-                hideAllContents();
-                document.getElementById("statisticsContent").classList.remove("hidden");
-
-                // Votre code pour générer le graphique ici...
-            }
-
-            // Ajouter des écouteurs d'événements pour chaque menu
-            document.getElementById("dashboardMenu").addEventListener("click", showDashboardContent);
-            document.getElementById("accountMenu").addEventListener("click", showAccountContent);
-            document.getElementById("messagesMenu").addEventListener("click", showMessagesContent);
-            document.getElementById("statisticsMenu").addEventListener("click", showStatisticsContent);
-
-            // Afficher le tableau de bord par défaut
-            showDashboardContent();
-        });
-        */
+            
         
 
         // jQuery pour la gestion du formulaire de modification
@@ -597,8 +553,6 @@ session_start();
 
             event.preventDefault();
             
-            
-
         }
 
         function premiereEtape() {
@@ -688,44 +642,6 @@ session_start();
         document.getElementById("header-toggle").addEventListener("click", function() {
             document.getElementById("dashboardContent").classList.toggle("decale-droite");
         });
-
-        
-
-        
-        // Soumission du formulaire
-        /*
-        var form = document.getElementById('step1');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Empêche l'envoi normal du formulaire
-
-            // Récupération des cases cochées
-            var selectedTypes = [];
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            checkboxes.forEach(function(checkbox) {
-                selectedTypes.push(checkbox.value);
-            });
-
-
-            // Ajout des types sélectionnés comme champs cachés dans le formulaire
-            selectedTypes.forEach(type => {
-                var input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'selectedTypes[]'; // Utilisation de crochets pour obtenir un tableau PHP
-                input.value = type;
-                form.appendChild(input);
-            });
-
-            // Envoi du formulaire
-            form.submit();
-
-            //afficher les types choisis
-            alert('Types choisis: ' + selectedTypes.join(', '));
-        }); */
-        
-    
-        
-
-
 
     </script>
 </body>

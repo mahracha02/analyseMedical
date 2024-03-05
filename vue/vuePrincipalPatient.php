@@ -267,7 +267,9 @@ foreach ($cheminsCSV as $chemin) {
                                 <!-- Ajoutez un bouton pour modifier les coordonnées de l'utilisateur -->
                                 <div class="d-flex justify-content-center align-items-center mt-2">
                                     <i class="bi bi-pencil h2 text-white mr-2"></i>
-                                    <button class="btn btn-light">Modifier Mes Coordonnées</button> 
+                                    <button class="btn btn-light">
+                                        <a href="./?action=comptePatient" style="text-decoration: none; color:black">Modifier Mes Coordonnées</a> 
+                                    </button> 
                                 </div>
                             </div>
                         </div>
@@ -400,8 +402,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="Hématies" class="form-label">Hématies :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="hematie" name="hematie" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="hematie" name="hematie" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">T/L</small>
@@ -414,8 +422,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="Hémoglobine" class="form-label">Hémoglobine :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="hemoglobine" name="hemoglobine" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="hemoglobine" name="hemoglobine" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">g/dl</small>
@@ -428,8 +442,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="Hématocrite" class="form-label">Hématocrite :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="hematocrite" name="hematocrite" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="hematocrite" name="hematocrite" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">%</small>
@@ -442,8 +462,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="vgm" class="form-label">V.G.M :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="vgm" name="vgm" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="vgm" name="vgm" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">fL</small>
@@ -456,8 +482,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="tcmh" class="form-label">T.C.M.H :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="tcmh" name="tcmh" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="tcmh" name="tcmh" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">pg</small>
@@ -470,8 +502,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="ccmh" class="form-label">C.C.M.H :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="ccmh" name="ccmh" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="ccmh" name="ccmh" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">g/dl</small>
@@ -484,8 +522,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="idr" class="form-label">I.D.R :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="idr" name="idr" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="idr" name="idr" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">%</small>
@@ -498,8 +542,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="Leucocytes" class="form-label">Leucocytes :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="Leucocytes" name="Leucocytes" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="leucocytes" name="leucocytes" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">G/L</small>
@@ -516,8 +566,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="polynucléairesNeutrophiles" class="form-label">Polynucléaires Neutrophiles :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="polynucléairesNeutrophiles" name="leucocytes" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="polynucléairesNeutrophiles" name="polynucléairesNeutrophiles" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">%</small>
@@ -530,8 +586,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Polynucléaires Eosinophiles :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="eosinophiles" name="eosinophiles" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="eosinophiles" name="eosinophiles" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">G/L</small>
@@ -544,8 +606,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Polynucléaires Basophiles :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="basophiles" name="basophiles" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="basophiles" name="basophiles" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">G/L</small>
@@ -558,8 +626,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Lymphocytes :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="lymphocytes" name="lymphocytes" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="lymphocytes" name="lymphocytes" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">G/L</small>
@@ -572,8 +646,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Monocytes :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="monocytes" name="monocytes" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="monocytes" name="monocytes" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">G/L</small>
@@ -590,8 +670,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Plaquettes :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="plaquette" name="plaquette" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="plaquette" name="plaquette" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">G/L</small>
@@ -604,8 +690,14 @@ foreach ($cheminsCSV as $chemin) {
                                 <div class="col-md-6">
                                     <label for="" class="form-label">Volume Plaquettaire Moyen :</label>
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="volumePlaquettaireMoyen" name="volumePlaquettaireMoyen" disabled>
+                                <div class="col-md-2 position-relative">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control rounded-end" id="volumePlaquettaireMoyen" name="volumePlaquettaireMoyen" disabled>
+                                        <!-- Icône de stylo pour éditer la valeur -->
+                                        <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                            <i class="bi bi-pencil"></i>
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <small class="form-text text-muted">fL</small>
@@ -629,8 +721,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Sodium plasmatique:</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="sodium" name="sodium" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="sodium" name="sodium" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mmol/L</small>
@@ -643,8 +741,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Potassium plasmatique:</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="potassium" name="potassium" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="potassium" name="potassium" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mmol/L</small>
@@ -657,8 +761,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Reserve alcaline :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="reserveAlcaline" name="reserveAlcaline" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="reserveAlcaline" name="reserveAlcaline" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mmol/L</small>
@@ -671,8 +781,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Protéines Totales :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="proteineTotal" name="proteineTotal" disabled>  
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="proteineTotal" name="proteineTotal" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -695,8 +811,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Urée :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="uree" name="uree" disabled>  
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="uree" name="uree" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -709,8 +831,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Créatinine :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="creatinine" name="creatinine" disabled>  
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="creatinine" name="creatinine" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">umol/L</small>
@@ -723,8 +851,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Poids utilisé dans le calcul :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="poidsCalcul" name="poidsCalcul" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="poidsUtilise" name="poidsUtilise" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">Kg</small>
@@ -737,8 +871,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Clairance MDRD (caucasien) :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="clairanceMDRD" name="clairanceMDRD" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="clairanceMDRD" name="clairanceMDRD" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mL/min</small>
@@ -751,8 +891,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Estimation de la clairance de la céatinine :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="estimationClairance" name="estimationClairance" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="estimationClairanceCreatinine" name="estimationClairanceCreatinine" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mL/min</small>
@@ -777,8 +923,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Glycémie :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="glycemie" name="glycemie" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="glycemie" name="glycemie" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -791,8 +943,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Glycémie à jeun :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="glycemieAJean" name="glycemieAJean" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="glycemieAJeun" name="glycemieAJeun" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -805,8 +963,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">hemoglobine glyquée (HbA1c):</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="hemoglobineGlyquee" name="hemoglobineGlyquee" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="hemoglobineGlyquee" name="hemoglobineGlyquee" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">%</small>
@@ -820,8 +984,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">TSH ultra sensible :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="TSHUltraSensible" name="TSHUltraSensible" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="TSHUltraSensible" name="TSHUltraSensible" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mUI/L</small>
@@ -834,8 +1004,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">T3 libre :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="T3Libre" name="T3Libre" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="T3Libre" name="T3Libre" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">pmol/L</small>
@@ -848,8 +1024,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">T4 libre :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="T4Libre" name="T4Libre" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="T4Libre" name="T4Libre" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">pmol/L</small>
@@ -862,8 +1044,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Anticorps anti-TSH :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="anticorpsAntiTSH" name="anticorpsAntiTSH" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="anticorpsAntiTSH" name="anticorpsAntiTSH" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -876,8 +1064,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Anticorps anti-TPO :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="anticorpsAntiTPO" name="anticorpsAntiTPO" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="anticorpsAntiTPO" name="anticorpsAntiTPO" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -890,8 +1084,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Anticorps anti-Thyroglobuline :</label>
                             </div>  
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="anticorpsAntiThyroglobuline" name="anticorpsAntiThyroglobuline" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="anticorpsAntiThyroglobuline" name="anticorpsAntiThyroglobuline" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -915,8 +1115,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-HIV1+2 et Ag P24 :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiHIV1+2AgP24" name="acAntiHIV1+2AgP24" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiHIV1+2AgP24" name="acAntiHIV1+2AgP24" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -929,8 +1135,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-HIV1+2 :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiHIV1+2" name="acAntiHIV1+2" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiHIV1+2" name="acAntiHIV1+2" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -943,8 +1155,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ag P24 :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="agP24" name="agP24" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="agP24" name="agP24" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -957,8 +1175,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Western Blot :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="westernBlot" name="westernBlot" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="westernBlot" name="westernBlot" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -971,8 +1195,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">ARN HIV :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="arnHIV" name="arnHIV" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="ARNHIV" name="ARNHIV" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -986,8 +1216,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">IgM anti-HAV :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="IgMAntiHAV" name="IgMAntiHAV" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="IgMAntiHAV" name="IgMAntiHAV" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1001,8 +1237,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ag HBs :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="agHBs" name="agHBs" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="agHBs" name="agHBs" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1015,8 +1257,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-HBs :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiHBs" name="acAntiHBs" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiHBs" name="acAntiHBs" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1029,8 +1277,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-HBc Total :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiHBcTotal" name="acAntiHBcTotal" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiHBcTotal" name="acAntiHBcTotal" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1044,8 +1298,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-HCV :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiHCV" name="acAntiHCV" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiHCV" name="acAntiHCV" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1059,8 +1319,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">TPHA :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="TPHA" name="TPHA" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="TPHA" name="TPHA" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1073,8 +1339,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">VDRL :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="VDRL" name="VDRL" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="VDRL" name="VDRL" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1088,8 +1360,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">MINI test :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="MINITest" name="MINITest" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="MINITest" name="MINITest" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1102,8 +1380,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-VCA IgM :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiVCAIgM" name="acAntiVCAIgM" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiVCAIgM" name="acAntiVCAIgM" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1116,8 +1400,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-EBNA IgG :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiEBNAIgG" name="acAntiEBNAIgG" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiEBNAIgG" name="acAntiEBNAIgG" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1131,8 +1421,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-CMV IgM :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiCMVIgM" name="acAntiCMVIgM" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiCMVIgM" name="acAntiCMVIgM" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1145,8 +1441,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-CMV IgG :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiCMVIgG" name="acAntiCMVIgG" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiCMVIgG" name="acAntiCMVIgG" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1160,8 +1462,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-Toxoplasme IgM :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiToxoplasmeIgM" name="acAntiToxoplasmeIgM" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiToxoplasmeIgM" name="acAntiToxoplasmeIgM" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1174,8 +1482,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-Toxoplasme IgG :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiToxoplasmeIgG" name="acAntiToxoplasmeIgG" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiToxoplasmeIgG" name="acAntiToxoplasmeIgG" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1189,8 +1503,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-Rubéole IgM :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiRubeoleIgM" name="acAntiRubeoleIgM" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiRubeoleIgM" name="acAntiRubeoleIgM" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1203,8 +1523,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ac anti-Rubéole IgG :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="acAntiRubeoleIgG" name="acAntiRubeoleIgG" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control rounded-end" id="acAntiRubeoleIgG" name="acAntiRubeoleIgG" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1227,8 +1553,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Calcitonine :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="calcitonine" name="calcitonine" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="calcitonine" name="calcitonine" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">pg/mL</small>
@@ -1241,8 +1573,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">CA 15-3 :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="CA15-3" name="CA15-3" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="CA15-3" name="CA15-3" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1255,8 +1593,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">CA 125 :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="CA125" name="CA125" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="CA125" name="CA125" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1269,8 +1613,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">CA 19-9 :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="CA19-9" name="CA19-9" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="CA19-9" name="CA19-9" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1283,8 +1633,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">AFP :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="AFP" name="AFP" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="AFP" name="AFP" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">ng/mL</small>
@@ -1297,8 +1653,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">HCG :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="HCG" name="HCG" disabled> 
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="HCG" name="HCG" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1311,8 +1673,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">PSA Total :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="PSATotal" name="PSATotal" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="PSATotal" name="PSATotal" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">ng/mL</small>
@@ -1335,8 +1703,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">ASAT (Transaminases SGOT) :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="ASAT" name="ASAT" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="ASAT" name="ASAT" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1349,8 +1723,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">ALAT (Transaminases SGPT) :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="ALAT" name="ALAT" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="ALAT" name="ALAT" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1363,8 +1743,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Gamma-GT :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="gammaGT" name="gammaGT" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="gammaGT" name="gammaGT" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1377,8 +1763,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">PAL (Phosphatases alcalines) :</label>
                             </div>
-                            <div class="col-md-2"> 
-                                <input type="text" class="form-control" id="PAL" name="PAL" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="PAL" name="PAL" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1391,8 +1783,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">5’NT (5’Nucléotidase) :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="5NT" name="5NT" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="5NT" name="5NT" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1405,8 +1803,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Bilirubines Libres :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="bilirubinesLibres" name="bilirubinesLibres" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="bilirubinesLibres" name="bilirubinesLibres" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mg/L</small>
@@ -1419,8 +1823,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Bilirubines Conjugées :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="bilirubinesConjuguees" name="bilirubinesConjuguees" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="bilirubinesConjuguees" name="bilirubinesConjuguees" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mg/L</small>
@@ -1433,8 +1843,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Bilirubine totale :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="bilirubineTotale" name="bilirubineTotale" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="bilirubineTotale" name="bilirubineTotale" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mg/L</small>
@@ -1447,8 +1863,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">TP (Temps de Prothrombine) :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="TP" name="TP" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="TP" name="TP" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">%</small>
@@ -1461,8 +1883,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Facteur V :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="facteurV" name="facteurV" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="facteurV" name="facteurV" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">%</small>
@@ -1475,8 +1903,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Albumine :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="albumine" name="albumine" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="albumine" name="albumine" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -1489,8 +1923,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Alpha-1-Antitrypsine :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="alpha1Antitrypsine" name="alpha1Antitrypsine" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="alpha1Antitrypsine" name="alpha1Antitrypsine" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -1503,8 +1943,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Anticorps Antimichondriaux :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="anticorpsAntimichondriaux" name="anticorpsAntimichondriaux" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="anticorpsAntimichondriaux" name="anticorpsAntimichondriaux" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1517,8 +1963,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Ceruleoplasmine :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="ceruleoplasmine" name="ceruleoplasmine" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="ceruloplasmine" name="ceruloplasmine" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -1531,8 +1983,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Cuprurie 24h :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="cuprurie24h" name="cuprurie24h" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="cuprurie24h" name="cuprurie24h" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">umol/24h</small>
@@ -1545,8 +2003,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">TSH us :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="TSHus" name="TSHus" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="TSHus" name="TSHus" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">mUI/L</small>
@@ -1559,8 +2023,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">T3 Libre :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="T3Libre" name="T3Libre" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="T3Libre" name="T3Libre" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">ng/L</small>
@@ -1573,8 +2043,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">T4 Libre :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="T4Libre" name="T4Libre" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="T4Libre" name="T4Libre" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">ng/L</small>
@@ -1587,8 +2063,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Hb :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="Hb" name="Hb" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="hb" name="hb" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/dL</small>
@@ -1601,8 +2083,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Reticulocytes :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="reticulocytes" name="reticulocytes" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="reticulocytes" name="reticulocytes" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">G/L</small>
@@ -1615,8 +2103,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Schizocytes :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="schizocytes" name="schizocytes" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="schizocytes" name="schizocytes" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">/mm3</small>
@@ -1629,8 +2123,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">Haptoglobine :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="haptoglobine" name="haptoglobine" disabled> 
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="haptoglobine" name="haptoglobine" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">g/L</small>
@@ -1643,8 +2143,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">IgA anti-Glutamases :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="IgAantiGlutamases" name="IgAantiGlutamases" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="IgAantiGlutamases" name="IgAantiGlutamases" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1657,8 +2163,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">IgM anti-VCA :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="IgMantiVCA" name="IgMantiVCA" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="IgMantiVCA" name="IgMantiVCA" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1671,8 +2183,14 @@ foreach ($cheminsCSV as $chemin) {
                             <div class="col-md-6">
                                 <label for="" class="form-label">ARN V :</label>
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="ARNV" name="ARNV" disabled>
+                            <div class="col-md-2 position-relative">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="ARNV" name="ARNV" disabled>
+                                    <!-- Icône de stylo pour éditer la valeur -->
+                                    <span class="input-group-text bg-white border-0 edit-icon position-absolute top-50 translate-middle-y end-0">
+                                        <i class="bi bi-pencil"></i>
+                                    </span>
+                                </div>
                             </div>
                             <div class="col-md-1">
                                 <small class="form-text text-muted">UI/L</small>
@@ -1681,12 +2199,7 @@ foreach ($cheminsCSV as $chemin) {
                                 <small class="form-text text-muted">(0 - 10)</small>
                             </div>
                         </div>
-                    </div>
-
-
-                    
-                                        
-                    
+                    </div>  
                 </div>
             </div>
         </form>
@@ -1709,11 +2222,15 @@ foreach ($cheminsCSV as $chemin) {
     <div id="overlay"></div>
 
     <script>
+        // données pour le graphique en forme de donut
+        var nombreAnalysesBien = <?php echo $analyseBien; ?>;
+        var nombreAnalysesPasBien = <?php echo $analysePasBien; ?>;
+        var nombreAnalysesARefaire = <?php echo $nombreAnalysesARefaire=2; ?>;
         // Données du graphique
         var data = {
             labels: ['Bien', 'Pas bien', 'À refaire'],
             datasets: [{
-                data: [13, 3, 2], // Remplacez ces valeurs par les données réelles
+                data: [nombreAnalysesBien, nombreAnalysesPasBien, nombreAnalysesARefaire], // Nombre d'analyses pour chaque section
                 backgroundColor: ['#28a745', '#dc3545', '#ffc107'], // Couleurs pour chaque section
                 hoverOffset: 4
             }]
@@ -2073,7 +2590,22 @@ foreach ($cheminsCSV as $chemin) {
         }
 
         
-        
+        $(document).ready(function() {
+            // Lorsque l'icône de stylo est cliquée
+            $('.edit-icon').click(function() {
+                // Trouvez le champ de texte associé
+                var textField = $(this).closest('.input-group').find('input[type="text"]');
+                
+                // Vérifiez si le champ de texte est désactivé
+                if (textField.prop('disabled')) {
+                    // Activer le champ de texte pour permettre la modification
+                    textField.prop('disabled', false);
+                } else {
+                    // Désactiver le champ de texte pour empêcher la modification
+                    textField.prop('disabled', true);
+                }
+            });
+        });
 
     </script>
 

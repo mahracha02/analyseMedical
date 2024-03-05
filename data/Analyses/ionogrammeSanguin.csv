@@ -4,3 +4,4 @@ id,username,created_date,type,statut,sodium,potassium,reserveAlcaline,proteineTo
 3,lori,2024-02-27,"Ionogramme sanguin",bien,34,23,24,81
 4,lori,2024-02-29,"Ionogramme sanguin",bien,123,23,24,81
 5,lori,2024-03-04,"Ionogramme sanguin",bien,137,4,25,66
+6,lori,2024-03-05,"Ionogramme sanguin",bien,137,4,25,66
