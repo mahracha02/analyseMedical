@@ -75,11 +75,7 @@
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <label for="date" class="form-label"><b>Date de l'analyse :</b></label>
-                            <input type="date" class="form-control" id="date" name="dateAnalyse">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="heure" class="form-label"><b>Heure de l'analyse :</b></label>
-                            <input type="time" class="form-control" id="heure" name="heureAnalyse">
+                            <input type="date" class="form-control" id="date" name="dateAnalyse" required>
                         </div>
                     </div>
 
@@ -130,3 +126,18 @@
 
     
 </div>
+
+<script>
+    // Fonction pour basculer entre les modes clair et sombre
+    function toggleDarkMode() {
+            // Sélectionnez le corps de la page
+            var body = document.body;
+
+            // Basculez entre la classe 'dark-mode'
+            body.classList.toggle('dark-mode');
+        }
+
+
+        // Ajoutez un gestionnaire d'événements au bouton de bascule
+        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+</script>

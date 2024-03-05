@@ -1,2 +1,5 @@
-id,uree,creatinine,poidsCalcul,clairanceMDRD,estimationClairanceCreatinine,username
-1,232,443,324,452,43,lori
+id,username,created_date,type,statut,uree,creatinine,poidsCalcul,clairanceMDRD,estimationClairanceCreatinine
+1,lori,2024-02-10,"Biochimie sanguine",bien,66,54,324,452,45
+2,lori,2024-02-05,"Biochimie sanguine",bien,232,443,324,452,432
+3,lori,2024-02-29,"Biochimie sanguine",bien,66,54,324,452,45
+4,lori,2024-03-04,"Biochimie sanguine",bien,0.4,44,122,1.71,55

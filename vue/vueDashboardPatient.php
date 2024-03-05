@@ -186,7 +186,7 @@ session_start();
             z-index: 1000;
         }
 
-        #saisieScanForm {
+        #saisieScanForm, #detailsAnalyse {
             display: none;
             position: fixed;
             top: 50%;
@@ -239,27 +239,51 @@ session_start();
             }
         }
 
+        .decale-droite {
+            transform: translateX(0px); /* Ajustez la valeur selon vos besoins */
+            transition: transform 0.3s ease; /* Ajoute une transition pour une animation fluide */
+        }
+
+        
+        #dashboardContent {
+            transition: margin-left 0.5s;
+        
+            position: relative; /* Assurez-vous que le contenu est positionné de manière relative */
+        }
+
+
+
+ 
 
     </style>
 </head>
 <body id="body-pd">
     <header class="header" id="header" style="max-height: 60px;">
-        <div class="header_toggle"> 
-            <i class='bx bx-menu' id="header-toggle"></i> 
-        </div>
-
-        <!-- Bouton pour basculer entre les modes clair et sombre -->
-        <div style="margin-left: -600px;">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button id="darkModeToggle" class="btn btn-primary btn-dark">
-                    <i class="fas fa-moon"></i> Mode Nuit
-                </button>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <!-- Bouton de menu -->
+                    <div class="header_toggle"> 
+                        <i class='bx bx-menu' id="header-toggle"></i> 
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <!-- Bouton pour basculer entre les modes clair et sombre -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button id="darkModeToggle" class="btn btn-primary btn-dark">
+                            <i class="fas fa-moon"></i> Mode Nuit
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+
         
         <div class="user-options d-flex align-items-center">
             
-            <div class="input-group mr-5" style="max-height: 40px;">
+            <div class="input-group mr-5" style="max-height: 40px; width:400px">
                 <input type="text" class="form-control form-control-sm" placeholder="Rechercher..." aria-label="Rechercher" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary btn-sm" type="button" id="button-addon2">Rechercher</button>
             </div>
@@ -286,7 +310,7 @@ session_start();
             </div> -->
 
             
-            <div class="icon user-img d-flex align-items-center bg-info text-white " style="height: 48px;">
+            <div class="icon user-img d-flex align-items-center bg-info text-white text-center" style="height: 48px;">
                 <span class="fst-italic"><b>Espace Patient</b></span>
             </div>
             <div class="user mt-2 ml-2">
@@ -511,48 +535,7 @@ session_start();
             showDashboardContent();
         });
         */
-        // Données du graphique
-        var data = {
-            labels: ['Bien', 'Pas bien', 'À refaire'],
-            datasets: [{
-                data: [13, 3, 2], // Remplacez ces valeurs par les données réelles
-                backgroundColor: ['#28a745', '#dc3545', '#ffc107'], // Couleurs pour chaque section
-                hoverOffset: 4
-            }]
-        };
-
-        // Configuration du graphique
-        var options = {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '70%', // Ajustez le pourcentage du trou intérieur
-            plugins: {
-                legend: {
-                    position: 'bottom'
-                }
-            }
-        };
-
-        // Créer le graphique en forme de donut
-        var ctx = document.getElementById('donutChart').getContext('2d');
-        var donutChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: data,
-            options: options
-        }); 
-
-        // Fonction pour basculer entre les modes clair et sombre
-        function toggleDarkMode() {
-            // Sélectionnez le corps de la page
-            var body = document.body;
-
-            // Basculez entre la classe 'dark-mode'
-            body.classList.toggle('dark-mode');
-        }
-
-
-        // Ajoutez un gestionnaire d'événements au bouton de bascule
-        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+        
 
         // jQuery pour la gestion du formulaire de modification
         $(document).ready(function () {
@@ -635,14 +618,7 @@ session_start();
 
             event.preventDefault();
         }
-        function diminuerLuminositeSaisieScan() {
-            $('body').addClass('saisie-mode'); // Ajoute la classe pour diminuer la luminosité et activer l'overlay
-            $('#saisieScanForm').show().addClass('animate__fadeIn');
-        }
-        function revenirLuminositeNormaleSaisieScan() {
-            $('body').removeClass('saisie-mode'); // Supprime la classe pour revenir à la luminosité normale et désactiver l'overlay
-            $('#saisieScanForm').hide();
-        }
+        
 
         // fonction typeChoix pour afficher les checkbox de hematologie si hematologie est coché
         function typeChoix(){
@@ -709,7 +685,12 @@ session_start();
             
         }
 
+        document.getElementById("header-toggle").addEventListener("click", function() {
+            document.getElementById("dashboardContent").classList.toggle("decale-droite");
+        });
+
         
+
         
         // Soumission du formulaire
         /*

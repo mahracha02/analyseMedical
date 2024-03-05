@@ -136,3 +136,18 @@
             </div>
         </div>     
     </div>
+
+    <script>
+        // Fonction pour basculer entre les modes clair et sombre
+        function toggleDarkMode() {
+            // Sélectionnez le corps de la page
+            var body = document.body;
+
+            // Basculez entre la classe 'dark-mode'
+            body.classList.toggle('dark-mode');
+        }
+
+
+        // Ajoutez un gestionnaire d'événements au bouton de bascule
+        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+    </script>

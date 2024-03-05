@@ -124,7 +124,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkboxBilanHepatique = isset($_POST['checkboxBilanHepatique']) ? $_POST['checkboxBilanHepatique'] : null;
 
     if(isset($_POST['suivant'])){
-              
+
+        $created_date = $_POST['dateAnalyse'];     
 
         ?>                   
         <div class="container " style="margin-top: 100px; max-height:700px; overflow-y: auto;">
@@ -162,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="Hématies" class="form-label">Hématies :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="Hématies">
+                                                        <input type="text" class="form-control" name="hematie">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">T/L</small>
@@ -176,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="Hémoglobine" class="form-label">Hémoglobine :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="Hémoglobine">
+                                                        <input type="text" class="form-control" name="hemoglobine">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">g/dl</small>
@@ -190,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="Hématocrite" class="form-label">Hématocrite :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="Hématocrite">
+                                                        <input type="text" class="form-control" name="hematocrite">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">%</small>
@@ -204,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="vgm" class="form-label">V.G.M :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="vgm">
+                                                        <input type="text" class="form-control" name="vgm">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">fL</small>
@@ -218,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="tcmh" class="form-label">T.C.M.H :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="tcmh">
+                                                        <input type="text" class="form-control" name="tcmh">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">pg</small>
@@ -232,7 +233,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="ccmh" class="form-label">C.C.M.H :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="ccmh">
+                                                        <input type="text" class="form-control" name="ccmh">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">g/dl</small>
@@ -246,7 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="idr" class="form-label">I.D.R :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="idr">
+                                                        <input type="text" class="form-control" name="idr">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">%</small>
@@ -260,7 +261,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="Leucocytes" class="form-label">Leucocytes :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="Leucocytes">
+                                                        <input type="text" class="form-control" name="Leucocytes">
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">G/L</small>
@@ -1413,7 +1414,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                         <label for="" class="form-label">Haptoglobine :</label>
                                                     </div>
                                                     <div class="col-md-2">
-                                                        <input type="text" class="form-control" id="" name="haptoglobine">
+                                                        <input type="text" class="form-control" id="" name="haptoglobine"> 
                                                     </div>
                                                     <div class="col-md-1">
                                                         <small class="form-text text-muted">g/L</small>
@@ -1489,6 +1490,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <input type="hidden" name="checkboxInfectiologie" value="<?php echo $checkboxInfectiologie; ?>">
                                     <input type="hidden" name="checkboxMarqueursTumoraux" value="<?php echo $checkboxMarqueursTumoraux; ?>">
                                     <input type="hidden" name="checkboxBilanHepatique" value="<?php echo $checkboxBilanHepatique; ?>">
+                                    <input type="hidden" name="created_date" value="<?php echo $created_date; ?>">
                                     
 
                                     <!-- 3 boutons: PRECEDENT, ANULLER, VALIDER -->
@@ -1504,6 +1506,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </div>
                                 </form>
+
+                                <?php
+                                if(isset($_SESSION['success'])){
+                                    ?>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <?php echo $_SESSION['success']; ?>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    <?php
+                                    unset($_SESSION['success']);
+                                }
+                                if(isset($_SESSION['error'])){
+                                    ?>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <?php echo $_SESSION['error']; ?>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    <?php
+                                    unset($_SESSION['error']);
+                                }
+                                ?>
                                 
                             </div>
                         </div>
@@ -1519,170 +1542,161 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['valider'])){
 
         
+           
 
 
-        if($checkboxHematologie == "hematologie"){ //si la checkbox est cochée
+                        
 
-            if($checkboxHemogramme == "hemogramme"){
-                $csvHemogramme = fopen("data/Analyses/hematologie.csv", "r");
+        if($checkboxHemogramme == "hemogramme"){
+            $csvHemogramme = fopen("data/Analyses/hemogramme.csv", "r");
 
-                $newId = 1; // Valeur par défaut si le fichier est vide
+            $newId = 1; // Valeur par défaut si le fichier est vide
 
-                // Parcourir chaque ligne du fichier
-                while ($row = fgetcsv($csvHemogramme)) {
-                    // $row est un tableau représentant une ligne du CSV
-                    // La première colonne (index 0) contient l'ID
+            // Parcourir chaque ligne du fichier
+            while ($row = fgetcsv($csvHemogramme)) {
+                // $row est un tableau représentant une ligne du CSV
+                // La première colonne (index 0) contient l'ID
 
-                    // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
-                    $newId = intval($row[0]);
-                }
-                $newId++;
+                // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
+                $newId = intval($row[0]);
+            }
+            $newId++;
+
+            $hematie=$_POST['hematie'];
+            $hematocrite=$_POST['hematocrite'];
+            $hemoglobine=$_POST['hemoglobine'];
+            $VGM=$_POST['vgm'];
+            $TCMH=$_POST['tcmh'];
+            $CCMH=$_POST['ccmh'];
+            $Leucocytes=$_POST['Leucocytes'];
+            $user=$_SESSION['username'];
+            $created_date=$_POST['created_date'];
+            $type="Hemogramme";
+            $statut="bien";
+
+            //saisie dans le fichier csv
+            $fichier= fopen("data/Analyses/hemogramme.csv", "a");
+
+            fputcsv($fichier, [
+                $newId,
+                $user,
+                $created_date,
+                $type,
+                $statut,
+                $hematie,
+                $hematocrite,
+                $hemoglobine,
+                $VGM,
+                $TCMH,
+                $CCMH,
+                $Leucocytes,
+                
+            ]);
+
+            //fermeture du fichier csv
+            fclose($fichier); 
 
             
-                $hematocrite=$_POST['hematocrite'];
-                $hemoglobine=$_POST['hemoglobine'];
-                $hematie=$_POST['hematie'];
-                $VGM=$_POST['VGM'];
-                $TCMH=$_POST['TCMH'];
-                $CCMH=$_POST['CCMH'];
-                $RDW=$_POST['RDW'];
-                $user=$_SESSION['username'];
+            
 
-                //saisie dans le fichier csv
-                $fichierHemogramme = fopen("data/Analyses/hematologie.csv", "a");
 
-                fputcsv($fichierHemogramme, [
-                    $newId,
-                    $hematocrite,
-                    $hemoglobine,
-                    $hematie,
-                    $VGM,
-                    $TCMH,
-                    $CCMH,
-                    $RDW,
-                    $user,
-                ]);
+            
+            
+        } 
 
-                //fermeture du fichier csv
-                fclose($fichierHemogramme); 
+        if($checkboxFormuleLeucocytaire == "formuleLeucocytaire"){
+            $csvFormuleLeucocytaire = fopen("data/Analyses/formuleLeucocytaire.csv", "r");
 
-                //affichage de page de succes
-                if($fichierHemogramme){
-                    //message de succes
-                    $_SESSION['success'] = "Analyse saisie avec succès";
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
+            $newId = 1; // Valeur par défaut si le fichier est vide
+
+            // Parcourir chaque ligne du fichier
+            while ($row = fgetcsv($csvFormuleLeucocytaire)) {
+                // $row est un tableau représentant une ligne du CSV
+                // La première colonne (index 0) contient l'ID
+
+                // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
+                $newId = intval($row[0]);
+            }
+            $newId++;
+
+        
+            $leucocytes=$_POST['leucocytes'];
+            $eosinophiles=$_POST['eosinophiles'];
+            $basophiles=$_POST['basophiles'];
+            $lymphocytes=$_POST['lymphocytes'];
+            $monocytes=$_POST['monocytes'];
+            $user=$_SESSION['username'];
+            $created_date=$_POST['created_date'];
+            $type="Formule leucocytaire";
+            $statut="bien";
+
+            //saisie dans le fichier csv
+            $fichier = fopen("data/Analyses/formuleLeucocytaire.csv", "a");
+
+            fputcsv($fichier, [
+                $newId,
+                $user,
+                $created_date,
+                $type,
+                $statut,
+                $leucocytes,
+                $eosinophiles,
+                $basophiles,
+                $lymphocytes,
+                $monocytes,
                 
 
-
-                
-            }
-
-            if($checkboxFormuleLeucocytaire == "formuleLeucocytaire"){
-                $csvFormuleLeucocytaire = fopen("data/Analyses/hematologie.csv", "r");
-
-                $newId = 1; // Valeur par défaut si le fichier est vide
-
-                // Parcourir chaque ligne du fichier
-                while ($row = fgetcsv($csvFormuleLeucocytaire)) {
-                    // $row est un tableau représentant une ligne du CSV
-                    // La première colonne (index 0) contient l'ID
-
-                    // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
-                    $newId = intval($row[0]);
-                }
-                $newId++;
+            ]);
 
             
-                $leucocytes=$_POST['leucocytes'];
-                $eosinophiles=$_POST['eosinophiles'];
-                $basophiles=$_POST['basophiles'];
-                $lymphocytes=$_POST['lymphocytes'];
-                $monocytes=$_POST['monocytes'];
-                $user=$_SESSION['username'];
 
-                //saisie dans le fichier csv
-                $fichierFormuleLeucocytaire = fopen("data/Analyses/hematologie.csv", "a");
-
-                fputcsv($fichierFormuleLeucocytaire, [
-                    $newId,
-                    $leucocytes,
-                    $eosinophiles,
-                    $basophiles,
-                    $lymphocytes,
-                    $monocytes,
-                    $user,
-                ]);
-
-                //affichage de page de succes
-                if($$fichierFormuleLeucocytaire){
-                    header("Location: ./?action=dashboardPatient&success=1");
-                    //message de succes
-                    $_SESSION['success'] = "Analyse saisie avec succès";
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
-
-                //fermeture du fichier csv
-                fclose($fichierFormuleLeucocytaire); 
-            }
-
-            if($checkboxNumerationPlaquettaire == "numerationPlaquettaire"){
-                $csvNumerationPlaquettaire = fopen("data/Analyses/hematologie.csv", "r");
-
-                $newId = 1; // Valeur par défaut si le fichier est vide
-
-                // Parcourir chaque ligne du fichier
-                while ($row = fgetcsv($csvNumerationPlaquettaire)) {
-                    // $row est un tableau représentant une ligne du CSV
-                    // La première colonne (index 0) contient l'ID
-
-                    // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
-                    $newId = intval($row[0]);
-                }
-                $newId++;
-
-            
-                $plaquettes=$_POST['plaquette'];
-                $volumePlaquettaireMoyen=$_POST['volumePlaquettaireMoyen'];
-                $user=$_SESSION['username'];
-
-                //saisie dans le fichier csv
-                $fichierNumerationPlaquettaire = fopen("data/Analyses/hematologie.csv", "a");
-
-                fputcsv($fichierNumerationPlaquettaire, [
-                    $newId,
-                    $plaquettes,
-                    $volumePlaquettaireMoyen,
-                    $user,
-                ]);
-
-                //affichage de page de succes
-                if($fichierNumerationPlaquettaire){
-                    header("Location: ./?action=dashboardPatient&success=1");
-                    //message de succes
-                    $_SESSION['success'] = "Analyse saisie avec succès";
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
-
-                //fermeture du fichier csv
-                fclose($fichierNumerationPlaquettaire); 
-            }
+            //fermeture du fichier csv
+            fclose($fichier); 
         }
+
+        if($checkboxNumerationPlaquettaire == "numerationPlaquettaire"){
+            $csvNumerationPlaquettaire = fopen("data/Analyses/numerationPlaquettaire.csv", "r");
+
+            $newId = 1; // Valeur par défaut si le fichier est vide
+
+            // Parcourir chaque ligne du fichier
+            while ($row = fgetcsv($csvNumerationPlaquettaire)) {
+                // $row est un tableau représentant une ligne du CSV
+                // La première colonne (index 0) contient l'ID
+
+                // Mise à jour de $newId avec la valeur de l'ID de la ligne actuelle
+                $newId = intval($row[0]);
+            }
+            $newId++;
+
+        
+            $plaquettes=$_POST['plaquette'];
+            $volumePlaquettaireMoyen=$_POST['volumePlaquettaireMoyen'];
+            $user=$_SESSION['username'];
+            $created_date=$_POST['created_date'];
+            $type="Numeration plaquettaire";
+            $statut="bien";
+
+            //saisie dans le fichier csv
+            $fichier = fopen("data/Analyses/numerationPlaquettaire.csv", "a");
+
+            fputcsv($fichier, [
+                $newId,
+                $user,
+                $created_date,
+                $type,
+                $statut,
+                $plaquettes,
+                $volumePlaquettaireMoyen,
+                
+            ]);
+
+            
+
+            //fermeture du fichier csv
+            fclose($fichier); 
+        }
+        
 
         if($checkboxBiochimie == "biochimie") {
             $csvBiochimie = fopen("data/Analyses/biochimieSanguine.csv", "r");
@@ -1706,9 +1720,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $clairanceMDRD=$_POST['clairanceMDRD'];
                 $estimationClairance=$_POST['estimationClairance'];
                 $user=$_SESSION['username'];
-
-                
-
+                $created_date=$_POST['created_date'];
+                $type="Biochimie sanguine";
+                $statut="bien";
 
 
                 //insertion dans le fichier csv
@@ -1717,44 +1731,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 //ecriture dans le fichier csv
                 fputcsv($fichier, [
                     $newId,
+                    $user,
+                    $created_date,
+                    $type,
+                    $statut,
                     $uree,
                     $creatinine,
                     $poidsCalcul,
                     $clairanceMDRD,
                     $estimationClairance,
-                    $user,
+                   
                 ]);
 
-                //affichage de page de succes
-                if($fichier){
-                    //message de succes au centre de la page
-                    echo '<div class="alert alert-success alert-dismissible fade show position-fixed top-50 start-50 translate-middle" role="alert" style="z-index: 10000; width: 400px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                                    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 8 0a8 8 0 0 1 8 8zM7.5 11.793l-3.146-3.147a.5.5 0 0 1 .708-.708L7.5 10.38l4.854-4.854a.5.5 0 1 1 .708.708l-5.146 5.147a.5.5 0 0 1-.708 0z"></path>
-                                    </symbol>
-                                </svg>
-                                <div class="d-flex align-items-center">
-                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success">
-                                        <use xlink:href="#check-circle-fill"/>
-                                    </svg>
-                                    <div>
-                                        Analyse saisie avec succès
-                                    </div>
-                                </div>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>';
-                    exit();
                 
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
 
             //fermeture du fichier csv
             fclose($fichier);  
+
+            
+
         }
 
         if($checkboxIonogrammeSanguin == "ionogramme") {
@@ -1778,46 +1773,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $reserveAlcaline=$_POST['reserveAlcaline'];
                 $proteinesTotales=$_POST['proteineTotal'];
                 $user=$_SESSION['username'];
+                $created_date=$_POST['created_date'];
+                $statut="bien";
+                $type="Ionogramme sanguin";
+
 
                 //saisie dans le fichier csv
-                $fichierIonogramme = fopen("data/Analyses/ionogrammeSanguin.csv", "a");
+                $fichier= fopen("data/Analyses/ionogrammeSanguin.csv", "a");
 
-                fputcsv($fichierIonogramme, [
+                fputcsv($fichier, [
                     $newId,
+                    $user,
+                    $created_date,
+                    $type,
+                    $statut,
                     $sodium,
                     $potassium,
                     $reserveAlcaline,
                     $proteinesTotales,
-                    $user,
+                    
                 ]);
 
-                //affichage de page de succes
-                if($fichierIonogramme){
-                    //message de succes
-                    echo 
-                    '<div class="container text-center" style="width: 600px; margin-top:300px">
-                        <div class="row justify-content-center" >
-                            <div class="col-md-9">
-                                <div class="alert alert-success" role="alert">
-                                    <h4 class="alert-heading">Succès !</h4>
-                                    <p>Votre analyse a été saisie avec succès.</p>
-                                    <hr>
-                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
-                
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
+                 
 
             //fermeture du fichier csv
-            fclose($fichierIonogramme); 
+            fclose($fichier);
+            
+           
         }
 
         if($checkboxEndocrinologie == "endocrinologie") {
@@ -1834,46 +1816,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $newId = intval($row[0]);
                 }
                 $newId++;
-
+                
             
-                $TSHUltraSensible=$_POST['TSHUltraSensible'];
+                $glycemie=$_POST['glycemie'];
+                $glycemieAjeun=$_POST['glycemieAJean'];
+                $hemoglobineGlyquee=$_POST['hemoglobineGlyquee'];
+                $TSHU1trasensible=$_POST['TSHUltraSensible'];
+                $T3Libre=$_POST['T3Libre'];
                 $T4Libre=$_POST['T4Libre'];
+                $anticorpsAntiTSH=$_POST['anticorpsAntiTSH'];
+                $anticorpsAntiTPO=$_POST['anticorpsAntiTPO'];
+                $anticorpsAntiThyroglobuline=$_POST['anticorpsAntiThyroglobuline'];
                 $user=$_SESSION['username'];
+                $created_date=$_POST['created_date'];
+                $type="Endocrinologie";
+                $statut="bien";
 
-                //saisie dans le fichier csv
-                $fichierEndocrinologie = fopen("data/Analyses/endocrinologie.csv", "a");
+                //saisir dans le fichier csv
+                $fichier=fopen("data/Analyses/endocrinologie.csv", "a");
 
-                fputcsv($fichierEndocrinologie, [
+                fputcsv($fichier, [
                     $newId,
-                    $TSHUltraSensible,
-                    $T4Libre,
                     $user,
+                    $created_date,
+                    $type,
+                    $statut,
+                    $glycemie,
+                    $glycemieAjeun,
+                    $hemoglobineGlyquee,
+                    $TSHU1trasensible,
+                    $T3Libre,
+                    $T4Libre,
+                    $anticorpsAntiTSH,
+                    $anticorpsAntiTPO,
+                    $anticorpsAntiThyroglobuline,
+                    
                 ]);
 
-                //affichage de page de succes
-                if($fichierEndocrinologie){
-                    //message de succes
-                    echo 
-                    '<div class="container text-center" style="width: 600px; margin-top:300px">
-                        <div class="row justify-content-center" >
-                            <div class="col-md-9">
-                                <div class="alert alert-success" role="alert">
-                                    <h4 class="alert-heading">Succès !</h4>
-                                    <p>Votre analyse a été saisie avec succès.</p>
-                                    <hr>
-                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
+                
 
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
+            //fermeture du fichier csv
+            fclose($fichier);
+
         }
 
         if($checkboxInfectiologie == "infectiologie") {
@@ -1892,42 +1876,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $newId++;
 
             
-                $CRPUltraSensible=$_POST['CRPUltraSensible'];
+                $acAntiHIV12AgP24=$_POST['acAntiHIV1+2AgP24'];
+                $acAntiHIV12=$_POST['acAntiHIV1+2'];
+                $agP24=$_POST['agP24'];
+                $westernBlot=$_POST['westernBlot'];
+                $arnHIV=$_POST['arnHIV'];
+                $IgMAntiHAV=$_POST['IgMAntiHAV'];
+                $agHBs=$_POST['agHBs'];
+                $acAntiHBs=$_POST['acAntiHBs'];
+                $acAntiHBcTotal=$_POST['acAntiHBcTotal'];
+                $acAntiHCV=$_POST['acAntiHCV'];
+                $TPHA=$_POST['TPHA'];
+                $VDRL=$_POST['VDRL'];
+                $MINITest=$_POST['MINITest'];
+                $acAntiVCAIgM=$_POST['acAntiVCAIgM'];
+                $acAntiEBNAIgG=$_POST['acAntiEBNAIgG'];
+                $acAntiCMVIgM=$_POST['acAntiCMVIgM'];
+                $acAntiCMVIgG=$_POST['acAntiCMVIgG'];
+                $acAntiToxoplasmeIgM=$_POST['acAntiToxoplasmeIgM'];
+                $acAntiToxoplasmeIgG=$_POST['acAntiToxoplasmeIgG'];
+                $acAntiRubeoleIgM=$_POST['acAntiRubeoleIgM'];
+                $acAntiRubeoleIgG=$_POST['acAntiRubeoleIgG'];
                 $user=$_SESSION['username'];
+                $created_date=$_POST['created_date'];
+                $type="Infectiologie";
+                $statut="bien";
 
                 //saisie dans le fichier csv
-                $fichierInfectiologie = fopen("data/Analyses/infectiologie.csv", "a");
+                $fichier = fopen("data/Analyses/infectiologie.csv", "a");
 
-                fputcsv($fichierInfectiologie, [
+                fputcsv($fichier, [
                     $newId,
-                    $CRPUltraSensible,
                     $user,
+                    $created_date,
+                    $type,
+                    $statut,
+                    $acAntiHIV12,
+                    $agP24,
+                    $westernBlot,
+                    $arnHIV,
+                    $IgMAntiHAV,
+                    $agHBs,
+                    $acAntiHBs,
+                    $acAntiHBcTotal,
+                    $acAntiHCV,
+                    $TPHA,
+                    $VDRL,
+                    $MINITest,
+                    $acAntiVCAIgM,
+                    $acAntiEBNAIgG,
+                    $acAntiCMVIgM,
+                    $acAntiCMVIgG,
+                    $acAntiToxoplasmeIgM,
+                    $acAntiToxoplasmeIgG,
+                    $acAntiRubeoleIgM,
+                    $acAntiRubeoleIgG,
+                    
+
+
                 ]);
 
-                //affichage de page de succes
-                if($fichierInfectiologie){
-                    //message de succes
-                    echo 
-                    '<div class="container text-center" style="width: 600px; margin-top:300px">
-                        <div class="row justify-content-center" >
-                            <div class="col-md-9">
-                                <div class="alert alert-success" role="alert">
-                                    <h4 class="alert-heading">Succès !</h4>
-                                    <p>Votre analyse a été saisie avec succès.</p>
-                                    <hr>
-                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
+                
 
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
+            //fermeture du fichier csv
+            fclose($fichier);
         }
 
         if($checkboxMarqueursTumoraux == "marqueursTumoraux") {
@@ -1946,42 +1958,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $newId++;
 
             
+                $calcitonine=$_POST['calcitonine'];
+                $CA153=$_POST['CA15-3'];
+                $CA125=$_POST['CA125'];
+                $CA199=$_POST['CA19-9'];
+                $AFP=$_POST['AFP'];
+                $HCG=$_POST['HCG'];
                 $PSATotal=$_POST['PSATotal'];
                 $user=$_SESSION['username'];
+                $created_date=$_POST['created_date'];
+                $type="Marqueurs tumoraux";
+                $statut="bien";
 
                 //saisie dans le fichier csv
-                $fichierMarqueursTumoraux = fopen("data/Analyses/marqueursTumoraux.csv", "a");
+                $fichier = fopen("data/Analyses/marqueursTumoraux.csv", "a");
 
-                fputcsv($fichierMarqueursTumoraux, [
+                fputcsv($fichier, [
                     $newId,
-                    $PSATotal,
                     $user,
+                    $created_date,
+                    $type,
+                    $statut,
+                    $CA153,
+                    $CA125,
+                    $CA199,
+                    $AFP,
+                    $HCG,
+                    $PSATotal,
+                    
                 ]);
 
-                //affichage de page de succes
-                if($fichierMarqueursTumoraux){
-                    //message de succes
-                    echo 
-                    '<div class="container text-center" style="width: 600px; margin-top:300px">
-                        <div class="row justify-content-center" >
-                            <div class="col-md-9">
-                                <div class="alert alert-success" role="alert">
-                                    <h4 class="alert-heading">Succès !</h4>
-                                    <p>Votre analyse a été saisie avec succès.</p>
-                                    <hr>
-                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
+                
 
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
+            //fermeture du fichier csv
+            fclose($fichier);
         }
 
         if($checkboxBilanHepatique == "bilanHepatique") {
@@ -1998,45 +2008,103 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $newId = intval($row[0]);
                 }
                 $newId++;
-
             
+                $ASAT=$_POST['ASAT'];
+                $ALAT=$_POST['ALAT'];
+                $gammaGT=$_POST['gammaGT'];
+                $PAL=$_POST['PAL'];
+                $NT5=$_POST['5NT'];
+                $bilirubinesLibres=$_POST['bilirubinesLibres'];
+                $bilirubinesConjuguees=$_POST['bilirubinesConjuguees'];
                 $bilirubineTotale=$_POST['bilirubineTotale'];
+                $TP=$_POST['TP'];
+                $facteurV=$_POST['facteurV'];
+                $albumine=$_POST['albumine'];
+                $alpha1Antitrypsine=$_POST['alpha1Antitrypsine'];
+                $anticorpsAntimichondriaux=$_POST['anticorpsAntimichondriaux'];
+                $ceruleoplasmine=$_POST['ceruleoplasmine'];
+                $cuprurie24h=$_POST['cuprurie24h'];
+                $TSHus=$_POST['TSHus'];
+                $T3Libre=$_POST['T3Libre'];
+                $T4Libre=$_POST['T4Libre'];
+                $Hb=$_POST['Hb'];
+                $reticulocytes=$_POST['reticulocytes'];
+                $schizocytes=$_POST['schizocytes'];
+                $haptoglobine=$_POST['haptoglobine'];
+                $IgAantiGlutamases=$_POST['IgAantiGlutamases'];
+                $IgMantiVCA=$_POST['IgMantiVCA'];
+                $ARNV=$_POST['ARNV'];
                 $user=$_SESSION['username'];
+                $created_date=$_POST['created_date'];
+                $type="Bilan hepatique";
+                $statut="bien";
 
                 //saisie dans le fichier csv
-                $fichierBilanHepatique = fopen("data/Analyses/bilanHepatique.csv", "a");
+                $fichier= fopen("data/Analyses/bilanHepatique.csv", "a");
 
-                fputcsv($fichierBilanHepatique, [
+                fputcsv($fichier, [
                     $newId,
-                    $bilirubineTotale,
                     $user,
+                    $created_date,
+                    $type,
+                    $statut,
+                    $ASAT,
+                    $ALAT,
+                    $gammaGT,
+                    $PAL,
+                    $NT5,
+                    $bilirubinesLibres,
+                    $bilirubinesConjuguees,
+                    $bilirubineTotale,
+                    $TP,
+                    $facteurV,
+                    $albumine,
+                    $alpha1Antitrypsine,
+                    $anticorpsAntimichondriaux,
+                    $ceruleoplasmine,
+                    $cuprurie24h,
+                    $TSHus,
+                    $T3Libre,
+                    $T4Libre,
+                    $Hb,
+                    $reticulocytes,
+                    $schizocytes,
+                    $haptoglobine,
+                    $IgAantiGlutamases,
+                    $IgMantiVCA,
+                    $ARNV,
+                    
                 ]);
 
-                //affichage de page de succes
-                if($fichierBilanHepatique){
-                    //message de succes
-                    echo 
-                    '<div class="container text-center" style="width: 600px; margin-top:300px">
-                        <div class="row justify-content-center" >
-                            <div class="col-md-9">
-                                <div class="alert alert-success" role="alert">
-                                    <h4 class="alert-heading">Succès !</h4>
-                                    <p>Votre analyse a été saisie avec succès.</p>
-                                    <hr>
-                                    <p class="mb-0">Vous pouvez continuer à saisir d\'autres analyses ou revenir à la page principale.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
+                
 
-                    exit();
-                } else {
-                    header("Location: ./?action=dashboardPatient&error=1");
-                    //message d'erreur
-                    $_SESSION['error'] = "Erreur lors de la saisie de l'analyse";
-                    exit();
-                }
+            //fermeture du fichier csv
+            fclose($fichier);
         }
+
+        if($fichier){
+            echo '<div class="container mt-4">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-6">
+                <div class="card" style="margin-top:120px">
+                  <div class="card-body">
+                    <div class="alert alert-success" role="alert">
+                      Analyse saisie avec succès
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>';
+        }
+        
+
+       
+
+
+
+
+        
 
 
 
@@ -2059,12 +2127,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         ?>
         <!-- 2 boutons: REVENIR A LA SAISIE MANUELLE, REVENIR AU TABLEAU DE BORD -->
-        <div class="row mt-6 text-center "  >
+        <div class="row mt-20 text-center "  >
             <div class="col-md-6 ">
-                <button class="btn btn-primary mt-4 mb-4 " >Revenir à la saisie manuelle</button>
+                <button>
+                    <a class="btn btn-primary mt-4 mb-4 " href="./?action=AnalyseSaisie">Revenir à la saisie manuelle</a>
+                </button>
             </div>
             <div class="col-md-6 ">
-                <button class="btn btn-success mt-4 mb-4 " >Revenir au tableau de bord</button>
+                <button>
+                    <a class="btn btn-success mt-4 mb-4 " href="./?action=dashboardPrincipalPatient">Revenir au tableau de bord</a>
+                </button>
             </div>
         </div>
         <?php
