@@ -1,7 +1,7 @@
 <?php
 
-include "./vue/vueDashboardPatient.php";
-include "./vue/vueAnalyseSaisie.php";
+include "./vue/vueDashboardMedecin.php";
+include "./vue/vuePrincipalMedecin.php";
 include "./vue/vuePied.php";
 
 if(isset($_POST['deconnexion'])){
@@ -11,6 +11,7 @@ if(isset($_POST['deconnexion'])){
 }
 
 if (!isset($_SESSION["username"])) {
+    session_destroy();
     header("Location: ./?action=connexion");
     exit();
 }

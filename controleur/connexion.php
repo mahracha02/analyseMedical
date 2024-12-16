@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["seConnecter"])) {
                 if ($userDetailsPatient !== false) {
                     $_SESSION['patient_details'] = $userDetailsPatient;
                 } else {
-                    $_SESSION['medecin_details'] = [
+                    $_SESSION['patient_details'] = [
                         'nom' => 'Informations introuvables',
                         'prenom' => 'Informations introuvables',
                         'mail' => 'Informations introuvables',
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["seConnecter"])) {
                 }
 
             } elseif (isUserInCSV($csvDataMedecin, $username)) {
-                header("Location: ./?action=dashboardMedecin");
+                header("Location: ./?action=dashboardPrincipalMedecin");
                 $userDetailsMedecin = getMedecinDetails($username);
                 if ($userDetailsMedecin !== false) {
                     $_SESSION['medecin_details'] = $userDetailsMedecin;
@@ -115,7 +115,7 @@ if (isset($_SESSION["username"]) ){
             exit();
         }
         elseif(isUserInCSV($csvDataMedecin, $username)){
-            header("Location: ./?action=dashboardMedecin");
+            header("Location: ./?action=dashboardPrincipalMedecin");
             exit();
         }
         

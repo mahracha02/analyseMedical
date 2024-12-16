@@ -109,8 +109,8 @@
                         </div>
                         <div class="row mt-4 text-center">
                             <div class="col-md-6 mx-auto d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary w-40 mr-4" name="analyseScan">Analyser</button>
-                                <button class="btn btn-danger w-40" onclick="revenirLuminositeNormaleSaisieScan()">Fermer</button>
+                                <button type="button" class="btn btn-primary w-40 mr-4" name="analyseScan">Analyser</button>
+                                <button type="button" class="btn btn-danger w-40" ">Fermer</button>
                             </div>
                         </div>
                         

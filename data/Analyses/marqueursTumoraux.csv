@@ -3,3 +3,5 @@ id,username,created_date,type,statut,calcitonine,CA15-3,CA125,CA19-9,AFP,HCG,PSA
 2,lori,2024-01-29,"Marqueurs tumoraux",pas bien,78,789,92,21,121,343
 3,lori,2024-02-29,"Marqueurs tumoraux",bien,78,789,92,21,121,343
 4,lori,2024-03-04,"Marqueurs tumoraux",bien,33,32,22,4,3,2
+5,abdel,2024-03-06,"Marqueurs tumoraux",bien,33,32,22,4,3,2
+6,soso22@gmail.com,2024-03-07,"Marqueurs tumoraux",bien,33,32,22,4,3,2
