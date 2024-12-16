@@ -1,7 +1,7 @@
 <?php
 
 include "./vue/vueDashboardPatient.php";
-include "./vue/vuePrincipalPatient.php";
+include "./vue/vueAnalyseSaisiePatient.php";
 include "./vue/vuePied.php";
 
 if(isset($_POST['deconnexion'])){

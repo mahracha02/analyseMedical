@@ -19,12 +19,18 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-PkJeKlZZfM+uaDyZkldA9e2UGjT2iVf6IImPqvRrWajqM71V2L3U1bXNqQ8C1cj" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WySz5lq7Jqz6MlVz92RBC2Ajqj2Jsd6MlN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");:root{--header-height: 3rem;--nav-width: 68px;--first-color: #4723D9;--first-color-light: #AFA5D9;--white-color: #F7F6FB;--body-font: 'Nunito', sans-serif;--normal-font-size: 1rem;--z-fixed: 100}*,::before,::after{box-sizing: border-box}body{position: relative;margin: var(--header-height) 0 0 0;padding: 0 1rem;font-family: var(--body-font);font-size: var(--normal-font-size);transition: .5s}a{text-decoration: none}.header{width: 100%;height: var(--header-height);position: fixed;top: 0;left: 0;display: flex;align-items: center;justify-content: space-between;padding: 0 1rem;background-color: var(--white-color);z-index: var(--z-fixed);transition: .5s}.header_toggle{color: var(--first-color);font-size: 1.5rem;cursor: pointer}.header_img{width: 35px;height: 35px;display: flex;justify-content: center;border-radius: 50%;overflow: hidden}.header_img img{width: 40px}.l-navbar{position: fixed;top: 0;left: -30%;width: var(--nav-width);height: 100vh;background-color: var(--first-color);padding: .5rem 1rem 0 0;transition: .5s;z-index: var(--z-fixed)}.nav{height: 100%;display: flex;flex-direction: column;justify-content: space-between;overflow: hidden}.nav_logo, .nav_link{display: grid;grid-template-columns: max-content max-content;align-items: center;column-gap: 1rem;padding: .5rem 0 .5rem 1.5rem}.nav_logo{margin-bottom: 2rem}.nav_logo-icon{font-size: 1.25rem;color: var(--white-color)}.nav_logo-name{color: var(--white-color);font-weight: 700}.nav_link{position: relative;color: var(--first-color-light);margin-bottom: 1.5rem;transition: .3s}.nav_link:hover{color: var(--white-color)}.nav_icon{font-size: 1.25rem}.show{left: 0}.body-pd{padding-left: calc(var(--nav-width) + 1rem)}.active{color: var(--white-color)}.active::before{content: '';position: absolute;left: 0;width: 2px;height: 32px;background-color: var(--white-color)}.height-100{height:100vh}@media screen and (min-width: 768px){body{margin: calc(var(--header-height) + 1rem) 0 0 0;padding-left: calc(var(--nav-width) + 2rem)}.header{height: calc(var(--header-height) + 1rem);padding: 0 2rem 0 calc(var(--nav-width) + 2rem)}.header_img{width: 40px;height: 40px}.header_img img{width: 45px}.l-navbar{left: 0;padding: 1rem 1rem 0 0}.show{width: calc(var(--nav-width) + 156px)}
         .body-pd{padding-left: calc(var(--nav-width) + 188px)}}
@@ -240,28 +246,34 @@ session_start();
             }
         }
 
-
+        
 
     </style>
 </head>
 <body id="body-pd">
     <header class="header" id="header" style="max-height: 60px;">
-        <div class="header_toggle"> 
-            <i class='bx bx-menu' id="header-toggle"></i> 
-        </div>
-
-        <!-- Bouton pour basculer entre les modes clair et sombre -->
-        <div style="margin-left: -600px;">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button id="darkModeToggle" class="btn btn-primary btn-dark">
-                    <i class="fas fa-moon"></i> Mode Nuit
-                </button>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <!-- Bouton de menu -->
+                    <div class="header_toggle"> 
+                        <i class='bx bx-menu' id="header-toggle"></i> 
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <!-- Bouton pour basculer entre les modes clair et sombre -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button id="darkModeToggle" class="btn btn-primary btn-dark">
+                            <i class="fas fa-moon"></i> Mode Nuit
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="user-options d-flex align-items-center">
             
-            <div class="input-group mr-5" style="max-height: 40px;">
+            <div class="input-group mr-5" style="max-height: 40px; width:400px">
                 <input type="text" class="form-control form-control-sm" placeholder="Rechercher..." aria-label="Rechercher" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary btn-sm" type="button" id="button-addon2">Rechercher</button>
             </div>
@@ -273,22 +285,9 @@ session_start();
             <button type="button" class="btn btn-primary position-relative mr-14">
                 Notifications <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
             </button>
-<!--
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo $_SESSION["username"]; ?>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Mon compte</a></li>
-                    <li><a class="dropdown-item" href="#">Mes analyses</a></li>
-                    <li><a class="dropdown-item" href="#">Mes messages</a></li>
-                    <li><a class="dropdown-item" href="#">Mes statistiques</a></li>
-                    <li><a class="dropdown-item" href="./?action=deconnexion">Déconnexion</a></li>
-                </ul>
-            </div> -->
 
             
-            <div class="icon user-img d-flex align-items-center bg-info text-white " style="height: 48px;">
+            <div class="icon user-img d-flex align-items-center bg-info text-white " style="height: 48px; width:100px">
                 <span class="fst-italic"><b>Espace Médecin</b></span>
             </div>
             <div class="user mt-2 ml-2">
@@ -314,22 +313,22 @@ session_start();
 
                 <div class="nav_list"> 
                 <!-- Ajoutez ces identifiants aux liens de menu correspondants -->
-                    <a href="#" class="nav_link active" id="dashboardMenu">
+                    <a href="./?action=dashboardPrincipalMedecin" class="nav_link " id="dashboardMenu">
                         <i class='bx bx-grid-alt nav_icon'></i> 
                         <span class="nav_name">Dashboard</span> 
                     </a> 
 
-                    <a href="#" class="nav_link" id="statisticsMenu">
+                    <a href="./?action=AnalyseSaisieMedecin" class="nav_link" id="statisticsMenu">
                         <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
-                        <span class="nav_name">Statistique</span> 
+                        <span class="nav_name">Analysez-moi</span> 
                     </a>
 
-                    <a href="#" class="nav_link" id="accountMenu">
+                    <a href="./?action=compteMedecin" class="nav_link" id="accountMenu">
                         <i class='bx bx-user nav_icon'></i> 
                         <span class="nav_name">Mon compte</span> 
                     </a> 
 
-                    <a href="#" class="nav_link" id="messagesMenu">
+                    <a href="./?action=messageMedecin" class="nav_link" id="messagesMenu">
                         <i class='bx bx-message-square-detail nav_icon'></i> 
                         <span class="nav_name">Messages</span> 
                     </a>  
@@ -346,655 +345,11 @@ session_start();
         </nav>
     </div>
     
-    <!--
-    <div style="display:none " >
-        <div class="h-25 d-inline-block" style="width: 120px; background-color: lightblue;">Height 25%</div>
-        <div class="h-50 d-inline-block" style="width: 120px; background-color: lightgreen;">Height 50%</div>
-        <div class="h-75 d-inline-block" style="width: 120px; background-color: lightcoral;">Height 75%</div>
-        <div class="h-100 d-inline-block" style="width: 120px; background-color: lightgoldenrodyellow;">Height 100%</div>
-        <div class="h-auto d-inline-block" style="width: 120px; background-color: lightpink;">Height auto</div>
-    </div>  -->
 
 
-    <div id="dashboardContent" class="content-fluid fixed mr-4" style="height:100vh" >
-        <div class="row">
-            <div class="container mt-4 ">
-                <!-- Ajoutez ces balises à l'intérieur de votre tableau de bord -->
-                <div class="row h-15">
-                    <!-- Card - Nombre total des patients -->
-                    <div class="col-md-3">
-                        <div class="card bg-info text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Nombre total des patients</h5>
-                                <p class="card-text">46</p>
-                            </div>
-                        </div>
-                    </div>
+    
 
-                    <!-- Patients analysés ce mois -->
-                    <div class="col-md-3">
-                        <div class="card bg-success text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Patients analysés ce mois</h5>
-                                <p class="card-text">33</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Patients non analysés ce mois -->
-                    <div class="col-md-3">
-                        <div class="card bg-danger text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Patients non analysés ce mois </h5>
-                                <p class="card-text">13</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card - Date de la dernière analyse -->
-                    <div class="col-md-3">
-                        <div class="card bg-primary text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Patients ajoutés ce mois</h5>
-                                <p class="card-text">5</p> 
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="row h-30" >
-                    <!-- Tableau des 12 mois -->
-                    <h2 style="margin-top: 10px;">Analyses des 12 mois :</h2>
-                    <div class="col-md-9  " style="max-height: 400px; overflow-y: auto; margin-top:10px" >
-                        
-                        <table class="table table-bordered" style="margin-top: 5px;" >
-                            <thead>
-                                <tr>
-                                    <th>Mois</th>
-                                    <th>Action</th>
-                                    <th>Nombre d'analyses</th>
-                                    <th>statut</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Boucle pour afficher les 12 mois -->
-                                <?php
-                                $mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-                                foreach ($mois as $moisItem) {
-                                    echo '<tr>';
-                                    echo '<td>' . $moisItem . '</td>';
-                                    echo '<td class="text-center">';
-                                    echo '<button class="btn btn-primary mr-14 ml-14">Consulter</button>';
-                                    echo '</td>';
-                                    echo '<td>';
-                                    echo'<div>';
-                                    echo'<span class="text-success">' . rand(0, 10) .'</span>';
-                                    echo'</div>';
-                                    echo '<td>';
-                                    echo'<div class="d-flex align-items-center">';
-                                    echo'<span class="text-success">Bien</span>';
-                                    echo'</div>';
-                                    echo '</td>';
-                                    echo '</tr>';
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                  
-                    <!-- Coordonnées de l'utilisateur (20%) -->
-                    <div class="col-md-3">
-                        <div class="card bg-info text-white  " style="height: 450px; margin-top:-40px">
-                            <div class="card-body text-center  ">
-                                <!-- Contenu des coordonnées de l'utilisateur ici -->
-                                <img src="photo/logo.png" alt="Photo de profil" class="img-fluid mx-auto rounded-circle mb-2" style="max-width: 150px;">
-                                <h2 class="card-title mb-4">Bienvenue, <?php echo $_SESSION['medecin_details']['nom']; ?> !</h2>
-                                <!-- Ajoutez les détails de l'utilisateur ici (nom, prénom, email, téléphone) -->
-                                <div class="text-left">
-                                    <p class="mb-2"><strong>Nom:</strong> <?php echo $_SESSION['medecin_details']['nom']; ?></p>
-                                    <p class="mb-2"><strong>Prénom:</strong> <?php echo $_SESSION['medecin_details']['prenom']; ?></p>
-                                    <p class="mb-2"><strong>Email:</strong> <?php echo $_SESSION['medecin_details']['mail']; ?></p>
-                                    <p class="mb-2"><strong>Téléphone:</strong> <?php echo $_SESSION['medecin_details']['tel']; ?></p>
-                                </div>
-                                <!-- Ajoutez un bouton pour modifier les coordonnées de l'utilisateur -->
-                                <div class="d-flex justify-content-center align-items-center mt-4">
-                                    <i class="bi bi-pencil h2 text-white mr-2"></i>
-                                    <button class="btn btn-light">Modifier Mes Coordonnées</button> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row h-10 ">
-                    <!-- Tableau des 5 dernières analyses -->
-                    <h2 style="margin-top: 20px; margin-bottom:-10px;">5 dernières analyses :</h2>
-                    <div class="col-md-6 table-responsive" style="max-height: 200px; overflow-y: auto;">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Statut</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Boucle pour afficher les 5 dernières analyses -->
-                                <?php
-                                $analyses = [
-                                    ["date" => "2021-01-22", "statut" => "Bien"],
-                                    ["date" => "2021-02-22", "statut" => "Pas bien"],
-                                    ["date" => "2021-03-22", "statut" => "Bien"],
-                                    ["date" => "2021-04-22", "statut" => "Bien"],
-                                    ["date" => "2021-05-22", "statut" => "Pas bien"],
-                                ];
-                                foreach ($analyses as $analyse) {
-                                    echo '<tr>';
-                                    echo '<td>' . $analyse["date"] . '</td>';
-                                    echo '<td>' . $analyse["statut"] . '</td>';
-                                    echo '<td>';
-                                    echo '<button class="btn btn-primary mr-14 ml-14">Consulter</button>';
-                                    echo '<button class="btn btn-danger">Supprimer</button>';
-                                    echo '</td>';
-                                    echo '</tr>';
-                                }
-                                ?>
-                            </tbody>
-                        </table>    
-                    </div>
-
-                    <!-- Graphique en forme de donut -->
-                    <div class="col-md-3" style="margin-top: -35px;">
-                        <canvas id="donutChart" width="400" height="200"></canvas>
-                    </div>
-
-                    <!-- Carte avec les options -->
-                    
-                    <div class="col-md-3">
-                        <div class="card" style="margin-top: -10px;">
-                            <div class="card-body">
-                                <h5 class="card-title mb-4">Choisir une option pour analyser vos résultats :</h5>
-                                <div class="d-flex justify-content-center align-items-center mb-4">
-                                    <i class="bi bi-file-earmark-text h2 text-success mr-2"></i>
-                                    <button class="btn btn-success" onclick="diminuerLuminositeSaisieManuelle()">Saisir Manuellement</button>
-                                </div>
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <i class="bi bi-cloud-download h2 text-info mr-2"></i>
-                                    <button class="btn btn-info" onclick="diminuerLuminositeSaisieScan()">Télécharger Un Scan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- formulaire de saisie manuelle -->
-
-    <div id="saisieManuelleForm" class="card animate__animated animate__fadeIn" style="width: 1000px; max-height:800px; overflow-y: auto;">
-        <div class="container mt-4">
-            <h5 class="card-title text-center mb-3" style="color: blueviolet;"><b>Formulaire de Saisie Manuellement</b></h5><br><br>
-            <!-- Barre de progression 
-                <div class="progress" style="margin-top: -40px; margin-bottom: 40px;">
-                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Étape 1</div>
-                </div>-->
-            <div class="container" id="step1" style="margin-top: -20px;">
-                
-                <div class="row">
-                    <div class="col-md-3">
-                        <label for="type" class="form-label text-black"><b>Type d'analyse :</b></label>
-                    </div>
-                    <div class="col-md-9">
-                        <div >
-                            <label class="btn btn-outline-primary mr-6">
-                                <input type="checkbox"  value="hematologie" onclick="typeChoix()" > Hématologie
-                            </label>
-                            <label class="btn btn-outline-primary mr-6">
-                                <input type="checkbox" value="ionogramme" > Ionogramme Sanguin
-                            </label>
-                            <label class="btn btn-outline-primary">
-                                <input type="checkbox"  value="biochimie" > Biochimie Sanguine
-                            </label>
-                        </div>
-                    </div>
-                    
-                </div>
-                <!-- 3 checkbox si hematologie est coché: HEMOGRAMME, FORMULE LEUCOCYTAIRE, NUMERATION PLAQUETTAIRE -->
-                <div class="row"style="margin-top: 20px;">
-                    <div class="col-md-12">
-                        <div id="hematologie" style="display: none;">
-                            <label class="btn btn-outline-primary mb-2 d-flex flex-column">
-                                <input type="checkbox" value="hemogramme"> HEMOGRAMME
-                            </label>
-                            <label class="btn btn-outline-primary mb-2 d-flex flex-column">
-                                <input type="checkbox" value="formuleLeucocytaire"> Formule Leucocytaire
-                            </label>
-                            <label class="btn btn-outline-primary d-flex flex-column">
-                                <input type="checkbox" value="numerotationPlaquettaire"> Numérotation Plaquettaire
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2 boutons: ANULLER, SUIVANT -->
-                <div class="row mt-6 text-center">
-                    <div class="col-md-6 ">
-                        <button class="btn btn-danger mt-4 mb-4 " onclick="revenirLuminositeNormaleSaisieManuelle()">Annuler</button>
-                    </div>
-                    <div class="col-md-6 ">
-                        <button class="btn btn-primary mt-4 mb-4 " onclick="afficherFormulaires()">Suivant</button>
-                    </div>
-                </div>
-            </div>
-             
-            <div class="container " id="formulaires" style="display: none; margin-top:-40px">
-                <div class="card" >
-                    <div class="card-body">
-                        <!-- Ajoutez vos champs de formulaire ici -->
-                        <form action="./?action=dashboardPatient" method="POST">
-                            <div class="container dynamic-cols-container" id="formulairesContainer">
-                                <!-- Les formulaires seront ajoutés ici dynamiquement -->
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-12">
-                                    <label for="" class="form-label">Observations :</label>
-                                    <textarea class="form-control" id="" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    
-                </div>
-
-                <!-- 3 boutons: PRECEDENT, ANULLER, VALIDER -->
-                <div class="row mt-6 text-center" id="boutonsFormulaires" >
-                    <div class="col-md-4 ">
-                        <button class="btn btn-primary mt-4 mb-4 " onclick="premiereEtape()">Précédent</button>
-                    </div>
-                    <div class="col-md-4 ">
-                        <button class="btn btn-danger mt-4 mb-4 " onclick="revenirLuminositeNormaleSaisieManuelle()">Annuler</button>
-                    </div>
-                    <div class="col-md-4 ">
-                        <button class="btn btn-success mt-4 mb-4 " onclick="validerFormulaires()">Valider</button>
-                    </div>
-                </div>
-            </div>
-
-
-            
-            <!-- Formulaire de la section suivante -->
-                    
-            <div id="hemogramme" style="display: none;">
-                            <h4><strong>HEMOGRAMME</strong></h4>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="Hématies" class="form-label">Hématies :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="Hématies">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">T/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(3.84 - 5.12)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="Hémoglobine" class="form-label">Hémoglobine :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="Hémoglobine">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">g/dl</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(11.8 - 15.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="Hématocrite" class="form-label">Hématocrite :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="Hématocrite">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">%</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(35.0 - 45.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="vgm" class="form-label">V.G.M :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="vgm">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">fL</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(83 - 97)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="tcmh" class="form-label">T.C.M.H :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="tcmh">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">pg</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(27.5 - 33.2)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="ccmh" class="form-label">C.C.M.H :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="ccmh">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">g/dl</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(31.9 - 35.9)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="idr" class="form-label">I.D.R :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="idr">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">%</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(11.2 - 15.9)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="Leucocytes" class="form-label">Leucocytes :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="Leucocytes">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">G/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(3.80 - 9.10)</small>
-                                </div>
-                            </div>   
-                        </div>
-
-                        
-
-                            
-                        <div id="formuleLeucocytaire" style="display: none;">
-                            <h4><strong>FORMULE LEUCOCYTAIRE</strong></h4>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="polynucléairesNeutrophiles" class="form-label">Polynucléaires Neutrophiles :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="polynucléairesNeutrophiles">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">%</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(40.0 - 75.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Polynucléaires Eosinophiles :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">%</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(0.0 - 7.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Polynucléaires Basophiles :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">%</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(0.0 - 1.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Polynucléaires Mononucléés :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">%</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(20.0 - 45.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Lymphocytes :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">%</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(20.0 - 45.0)</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="numerotationPlaquettaire" style="display: none;">
-                            <h4><strong>NUMEROTATION PLAQUETTAIRE</strong></h4>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Plaquettes :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">G/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(150.0 - 450.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">V.S.G :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">mm</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(2.0 - 10.0)</small>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        <div id="ionogramme" style="display: none;">
-                            <h4><strong>IONOGRAMME SANGUIN</strong></h4>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Sodium :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">mmol/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(135.0 - 145.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Potassium :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">mmol/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(3.5 - 5.1)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Chlore :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">mmol/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(98.0 - 107.0)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Calcium Total :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">  
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">mmol/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(2.15 - 2.55)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Calcium Ionisé :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">  
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">mmol/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(1.15 - 1.35)</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="biochimie" style="display: none;">
-                            <h4><strong>BIOCHIMIE SANGUINE</strong></h4>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Glycémie à jeun :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">  
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">g/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(0.70 - 1.10)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Urée Sanguine :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">  
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">g/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(0.15 - 0.45)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Créatinine Sanguine :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">  
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">g/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(0.70 - 1.10)</small>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="" class="form-label">Acide Urique Sanguin :</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control" id="">
-                                </div>
-                                <div class="col-md-1">
-                                    <small class="form-text text-muted">g/L</small>
-                                </div>
-                                <div class="col-md-3">
-                                    <small class="form-text text-muted">(0.15 - 0.45)</small>
-                                </div>
-                            </div>
-                        </div>
-                    
-
-                        
-            
-        </div>
-        
-    </div>
+    
         <!-- Formulaire pour telecharger un scan -->
 
         <div id="saisieScanForm" class="card animate__animated animate__fadeIn" style="width: 450px; height:300px;">
@@ -1012,7 +367,7 @@ session_start();
                     
                 </form>
                 <div class="mb-3 mt-6 text-center">
-                    <button class="btn btn-danger mt-2" onclick="revenirLuminositeNormaleSaisieScan()">Fermer</button>
+                    <button class="btn btn-danger mt-2" >Fermer</button>
                 </div>
             </div>
         </div>
@@ -1022,159 +377,11 @@ session_start();
 
   
 
-    <div id="accountContent" class="content-fluid fixed mr-4" style="height:100vh; width:93%">
-        <div class="row">
-                <div class="container mt-4">
-                    <h2 class="bg-info h-10 m-2"><b>Mon compte</b></h2>
-                    <hr>
-                    <div class="row h-90" style="margin-bottom: -5px;">
-                        <!-- Informations actuelles de l'utilisateur -->
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-4"><b>Vos coordonnées actuelles :</b></h5>
-                                    <p><strong>Nom:</strong> <span id="currentNom"><?php echo $_SESSION['medecin_details']['nom']; ?></span></p>
-                                    <p><strong>Prénom:</strong> <span id="currentPrenom"><?php echo $_SESSION['medecin_details']['prenom']; ?></span></p>
-                                    <p><strong>Username:</strong> <span id="currentUsername"><?php echo $_SESSION['username']; ?></span></p>
-                                    <p><strong>Date de naissance:</strong> <?php echo $_SESSION['medecin_details']['dateNaissance']; ?></p>
-                                    <p><strong>Sexe:</strong> <?php echo $_SESSION['medecin_details']['sexe']; ?></p>
-                                    <p><strong>Email:</strong> <span id="currentEmail"><?php echo $_SESSION['medecin_details']['mail']; ?></span></p>
-                                    <p><strong>Téléphone:</strong> <span id="currentTel"><?php echo $_SESSION['medecin_details']['tel']; ?></span></p>
-                                    <p><strong>Adresse:</strong> <?php echo $_SESSION['medecin_details']['adresse']; ?></p>
-                                    <p><strong>Code Postal:</strong> <?php echo $_SESSION['medecin_details']['codePostal']; ?></p>
-                                    <p><strong>Ville:</strong> <?php echo $_SESSION['medecin_details']['ville']; ?></p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <!-- Formulaire de modification des coordonnées -->
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-4"><b>Modifier vos coordonnées :</b></h5>
-                                    <form id="updateForm">
-                                        <div class="row">
-                                            <div class="col-md-4 mb-4">
-                                                <label for="nom" class="form-label">Nom :</label>
-                                                <input type="text" class="form-control" id="nom" placeholder="Votre nom">
-                                            </div>
-                                            <div class="col-md-4 mb-4">
-                                                <label for="prenom" class="form-label">Prénom :</label>
-                                                <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
-                                            </div>
-                                            <div class="col-md-4 mb-4">
-                                                <label for="username" class="form-label">Username :</label>
-                                                <input type="text" class="form-control" id="username" placeholder="Votre username">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 mb-4">
-                                                <label for="dateNaissance" class="form-label">Date de naissance :</label>
-                                                <input type="date" class="form-control" id="dateNaissance" placeholder="Votre date de naissance">
-                                            </div>
-                                            <div class="col-md-4 mb-4">
-                                                <label for="sexe" class="form-label">Sexe :</label>
-                                                <select class="form-select" id="sexe">
-                                                    <option value="Homme">Homme</option>
-                                                    <option value="Femme">Femme</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4 mb-4">
-                                                <label for="email" class="form-label">Email :</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Votre email">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 mb-4">
-                                                <label for="tel" class="form-label">Téléphone :</label>
-                                                <input type="tel" class="form-control" id="tel" placeholder="Votre téléphone">
-                                            </div>
-                                            <div class="col-md-4 mb-4">
-                                                <label for="adresse" class="form-label">Adresse :</label>
-                                                <input type="text" class="form-control" id="adresse" placeholder="Votre adresse">
-                                            </div>
-                                            <div class="col-md-2 mb-4">
-                                                <label for="ville" class="form-label">Ville :</label>
-                                                <input type="text" class="form-control" id="ville" placeholder="Votre ville">
-                                            </div>
-                                            <div class="col-md-2 mb-4">
-                                                <label for="codePostal" class="form-label">Code Postal :</label>
-                                                <input type="text" class="form-control" id="codePostal" placeholder="Zip">
-                                            </div>
-                                        </div><br><br><br><br>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn btn-primary">Modifier</button>
-                                        </div>
-                                        
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-  
-                    </div>
-
-                    <div class="row h-10">
-                        <!-- Formulaire de modification du mot de passe -->
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title mb-4"><b>Modifier votre mot de passe :</b></h5>
-                                    <form id="updatePasswordForm">
-                                        <div class="row">
-                                            <div class="col-md-4 mb-4">
-                                                <label for="oldPassword" class="form-label">Ancien mot de passe :</label>
-                                                <input type="password" class="form-control" id="oldPassword" placeholder="Votre ancien mot de passe">
-                                            </div>
-                                            <div class="col-md-4 mb-4">
-                                                <label for="newPassword" class="form-label">Nouveau mot de passe :</label>
-                                                <input type="password" class="form-control" id="newPassword" placeholder="Votre nouveau mot de passe">
-                                            </div>
-                                            <div class="col-md-4 mb-4">
-                                                <label for="confirmNewPassword" class="form-label">Confirmer le nouveau mot de passe :</label>
-                                                <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirmer nouveau mot de passe">
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn btn-primary">Valider</button>
-                                        </div>
-                                </div>
-                            </div>    
-                        </div>
-                        <!-- Formulaire de suppression du compte -->
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title mb-4"><b>Supprimer votre compte :</b></h5><br>
-                                    <p>Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.</p><br>
-                                    <button type="button" class="btn btn-danger" id="deleteAccountBtn">Supprimer le compte</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                
-            </div>
-        </div>     
-    </div>
+    
 
     
 
-    <div id="messagesContent" class="content hidden">
-        <!-- ... Contenu de la section Messages ici ... -->
-    </div>
-
-
-    <div id="statisticsContent" class="content hidden">
-        <!-- ... Contenu de la section Statistique ici ... -->
-
-        <div>
-            <canvas id="statChart" width="400" height="200"></canvas>
-        </div>
-    </div>
+    
 
 
 
@@ -1184,144 +391,103 @@ session_start();
             
 
 
-            function toggleMenu() {
-                var menu = document.querySelector('.menu');
-                var menuButton = document.querySelector('.menu-button');
+                function toggleMenu() {
+                    var menu = document.querySelector('.menu');
+                    var menuButton = document.querySelector('.menu-button');
 
-                menu.classList.toggle('menu-active');
-                menu.classList.toggle('menu-visible');
+                    menu.classList.toggle('menu-active');
+                    menu.classList.toggle('menu-visible');
 
-                menu.classList.contains('menu-visible') ?
-                menuButton.setAttribute('aria-label', 'Close menu') :
-                menuButton.setAttribute('aria-label', 'Open menu');
-            }
+                    menu.classList.contains('menu-visible') ?
+                    menuButton.setAttribute('aria-label', 'Close menu') :
+                    menuButton.setAttribute('aria-label', 'Open menu');
+                }
 
-            document.addEventListener("DOMContentLoaded", function(event) {
-   
-            const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-            const toggle = document.getElementById(toggleId),
-            nav = document.getElementById(navId),
-            bodypd = document.getElementById(bodyId),
-            headerpd = document.getElementById(headerId)
-            
-            // Validate that all variables exist
-            if(toggle && nav && bodypd && headerpd){
-            toggle.addEventListener('click', ()=>{
-            // show navbar
-            nav.classList.toggle('show')
-            // change icon
-            toggle.classList.toggle('bx-x')
-            // add padding to body
-            bodypd.classList.toggle('body-pd')
-            // add padding to header
-            headerpd.classList.toggle('body-pd')
-            })
-            }
-            }
-            
-            showNavbar('header-toggle','nav-bar','body-pd','header')
-            
-            /*===== LINK ACTIVE =====*/
-            const linkColor = document.querySelectorAll('.nav_link')
-            
-            function colorLink(){
-            if(linkColor){
-            linkColor.forEach(l=> l.classList.remove('active'))
-            this.classList.add('active')
-            }
-            }
-            linkColor.forEach(l=> l.addEventListener('click', colorLink))
-            
-                // Your code to run since DOM is loaded and ready
+                document.addEventListener("DOMContentLoaded", function(event) {
+    
+                const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+                const toggle = document.getElementById(toggleId),
+                nav = document.getElementById(navId),
+                bodypd = document.getElementById(bodyId),
+                headerpd = document.getElementById(headerId)
+                
+                // Validate that all variables exist
+                if(toggle && nav && bodypd && headerpd){
+                toggle.addEventListener('click', ()=>{
+                // show navbar
+                nav.classList.toggle('show')
+                // change icon
+                toggle.classList.toggle('bx-x')
+                // add padding to body
+                bodypd.classList.toggle('body-pd')
+                // add padding to header
+                headerpd.classList.toggle('body-pd')
+                })
+                }
+                }
+                
+                showNavbar('header-toggle','nav-bar','body-pd','header')
+                
+                /*===== LINK ACTIVE =====*/
+                const linkColor = document.querySelectorAll('.nav_link')
+                
+                function colorLink(){
+                if(linkColor){
+                linkColor.forEach(l=> l.classList.remove('active'))
+                this.classList.add('active')
+                }
+                }
+                linkColor.forEach(l=> l.addEventListener('click', colorLink))
+                
+                });
+
+                document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionnez tous les liens de menu
+            var menuLinks = document.querySelectorAll('.nav_link');
+
+            // Ajoutez un écouteur d'événements à chaque lien de menu
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    // Supprimez la classe active de tous les liens de menu
+                    menuLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+
+                    // Ajoutez la classe active uniquement au lien de menu cliqué
+                    link.classList.add('active');
+
+                    // Stockez l'ID du lien de menu actif dans le stockage local
+                    localStorage.setItem('activeMenuId', link.id);
+                });
             });
 
-            document.addEventListener("DOMContentLoaded", function() {
-            // Fonction pour masquer tous les contenus
-            function hideAllContents() {
-                document.getElementById("dashboardContent").classList.add("hidden");
-                document.getElementById("accountContent").classList.add("hidden");
-                document.getElementById("messagesContent").classList.add("hidden");
-                document.getElementById("statisticsContent").classList.add("hidden");
-            }
-
-            // Fonction pour afficher le contenu du tableau de bord
-            function showDashboardContent() {
-                hideAllContents();
-                document.getElementById("dashboardContent").classList.remove("hidden");
-            }
-
-            // Fonction pour afficher le contenu du compte
-            function showAccountContent() {
-                hideAllContents();
-                document.getElementById("accountContent").classList.remove("hidden");
-            }
-
-            // Fonction pour afficher le contenu des messages
-            function showMessagesContent() {
-                hideAllContents();
-                document.getElementById("messagesContent").classList.remove("hidden");
-            }
-
-            // Fonction pour afficher le contenu des statistiques
-            function showStatisticsContent() {
-                hideAllContents();
-                document.getElementById("statisticsContent").classList.remove("hidden");
-
-                // Votre code pour générer le graphique ici...
-            }
-
-            // Ajouter des écouteurs d'événements pour chaque menu
-            document.getElementById("dashboardMenu").addEventListener("click", showDashboardContent);
-            document.getElementById("accountMenu").addEventListener("click", showAccountContent);
-            document.getElementById("messagesMenu").addEventListener("click", showMessagesContent);
-            document.getElementById("statisticsMenu").addEventListener("click", showStatisticsContent);
-
-            // Afficher le tableau de bord par défaut
-            showDashboardContent();
-        });
-        
-        // Données du graphique
-        var data = {
-            labels: ['Analysés', 'Pas analysés', 'À refaire'],
-            datasets: [{
-                data: [33, 13, 6], // Remplacez ces valeurs par les données réelles
-                backgroundColor: ['#28a745', '#dc3545', '#ffc107'], // Couleurs pour chaque section
-                hoverOffset: 4
-            }]
-        };
-
-        // Configuration du graphique
-        var options = {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '70%', // Ajustez le pourcentage du trou intérieur
-            plugins: {
-                legend: {
-                    position: 'bottom'
+            // Restaurez l'état actif à partir du stockage local lors du chargement de la page
+            var activeMenuId = localStorage.getItem('activeMenuId');
+            if (activeMenuId) {
+                var activeMenuLink = document.getElementById(activeMenuId);
+                if (activeMenuLink) {
+                    activeMenuLink.classList.add('active');
                 }
             }
-        };
+        });
+            
+        function revenirLuminositeNormaleSaisieManuelle() {
+            
 
-        // Créer le graphique en forme de donut
-        var ctx = document.getElementById('donutChart').getContext('2d');
-        var donutChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: data,
-            options: options
-        }); 
+            // Supprimez la classe pour revenir à la luminosité normale et désactiver l'overlay
+            $('body').removeClass('saisie-mode');
 
-        // Fonction pour basculer entre les modes clair et sombre
-        function toggleDarkMode() {
-            // Sélectionnez le corps de la page
-            var body = document.body;
+            
 
-            // Basculez entre la classe 'dark-mode'
-            body.classList.toggle('dark-mode');
+            // decocher les checkbox
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+
+            event.preventDefault();
+            
         }
-
-
-        // Ajoutez un gestionnaire d'événements au bouton de bascule
-        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
 
         // jQuery pour la gestion du formulaire de modification
         $(document).ready(function () {
@@ -1350,63 +516,7 @@ session_start();
             });
         });
 
-       
-        function diminuerLuminositeSaisieManuelle() {
-            $('body').addClass('saisie-mode'); // Ajoute la classe pour diminuer la luminosité et activer l'overlay
-            $('#saisieManuelleForm').show().addClass('animate__fadeIn');
-        }
-
-        function revenirLuminositeNormaleSaisieManuelle() {
-            
-
-            // Supprimez la classe pour revenir à la luminosité normale et désactiver l'overlay
-            $('body').removeClass('saisie-mode');
-
-            $('#step1').show(); // Affichez la première étape
-
-            // Cachez le formulaire
-            $('#saisieManuelleForm').hide();
-            $('#formulaires').hide();
-            $('#hemogramme').hide();
-            $('#hematologie').hide();
-            $('#formuleLeucocytaire').hide();
-            $('#numerotationPlaquettaire').hide();
-            $('#ionogramme').hide();
-            $('#biochimie').hide();
-
-            // decocher les checkbox
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = false;
-            });
-            
-            
-
-        }
-
-        function premiereEtape() {
-            $('#step1').show();
-            $('#hematologie').hide();
-            $('#formulaires').hide();
-            $('#hemogramme').hide();
-            $('#formuleLeucocytaire').hide();
-            $('#numerotationPlaquettaire').hide();
-            $('#ionogramme').hide();
-            $('#biochimie').hide();
-            // decocher les checkbox
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = false;
-            });
-        }
-        function diminuerLuminositeSaisieScan() {
-            $('body').addClass('saisie-mode'); // Ajoute la classe pour diminuer la luminosité et activer l'overlay
-            $('#saisieScanForm').show().addClass('animate__fadeIn');
-        }
-        function revenirLuminositeNormaleSaisieScan() {
-            $('body').removeClass('saisie-mode'); // Supprime la classe pour revenir à la luminosité normale et désactiver l'overlay
-            $('#saisieScanForm').hide();
-        }
+        
 
         // fonction typeChoix pour afficher les checkbox de hematologie si hematologie est coché
         function typeChoix(){
@@ -1417,7 +527,7 @@ session_start();
                 hematologie.style.display = "none";
             }
         }
-
+        
         function afficherFormulaires() {
             var typesChoisis = [];
             var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -1438,38 +548,59 @@ session_start();
         }
 
         function genererFormulaires(types) {
-        var formulairesContainer = document.getElementById('formulairesContainer');
+            var formulaires = document.getElementById('formulaires');
+            var formulairesContainer = document.getElementById('formulairesContainer');
 
-        if (types.includes('hematologie') && types.includes('hemogramme')==false && types.includes('formuleLeucocytaire')==false && types.includes('numerotationPlaquettaire')==false) {
-            alert("Veuillez sélectionner au moins un type d'analyse de l'hématologie.");
+            if (types.includes('hematologie') && types.includes('hemogramme')==false && types.includes('formuleLeucocytaire')==false && types.includes('numerotationPlaquettaire')==false) {
+                alert("Veuillez sélectionner au moins un type d'analyse de l'hématologie.");
+                
+            }
+            if (types.includes('hemogramme')) {
+                var hemogramme = document.getElementById('hemogramme');
+                hemogramme.style.display = 'block';
+                formulairesContainer.appendChild(hemogramme);
+            }
+            if (types.includes('formuleLeucocytaire')) {
+                var formuleLeucocytaire = document.getElementById('formuleLeucocytaire');
+                formuleLeucocytaire.style.display = 'block';
+                formulairesContainer.appendChild(formuleLeucocytaire);
+            }
+            if (types.includes('numerotationPlaquettaire')) {
+                var numerotationPlaquettaire = document.getElementById('numerotationPlaquettaire');
+                numerotationPlaquettaire.style.display = 'block';
+                formulairesContainer.appendChild(numerotationPlaquettaire);
+            }
+            if (types.includes('ionogramme')) {
+                var ionogramme = document.getElementById('ionogramme');
+                ionogramme.style.display = 'block';
+                formulairesContainer.appendChild(ionogramme);
+            }
+            if (types.includes('biochimie')) {
+                var biochimie = document.getElementById('biochimie');
+                biochimie.style.display = 'block';
+                formulairesContainer.appendChild(biochimie);
+            }
+            
         }
-        if (types.includes('hemogramme')) {
-            var hemogramme = document.getElementById('hemogramme');
-            hemogramme.style.display = 'block';
-            formulairesContainer.appendChild(hemogramme);
+
+        document.getElementById("header-toggle").addEventListener("click", function() {
+            document.getElementById("dashboardContent").classList.toggle("decale-droite");
+        });
+
+        // Fonction pour basculer entre les modes clair et sombre
+        function toggleDarkMode() {
+            // Sélectionnez le corps de la page
+            var body = document.body;
+
+            // Basculez entre la classe 'dark-mode'
+            body.classList.toggle('dark-mode');
         }
-        if (types.includes('formuleLeucocytaire')) {
-            var formuleLeucocytaire = document.getElementById('formuleLeucocytaire');
-            formuleLeucocytaire.style.display = 'block';
-            formulairesContainer.appendChild(formuleLeucocytaire);
-        }
-        if (types.includes('numerotationPlaquettaire')) {
-            var numerotationPlaquettaire = document.getElementById('numerotationPlaquettaire');
-            numerotationPlaquettaire.style.display = 'block';
-            formulairesContainer.appendChild(numerotationPlaquettaire);
-        }
-        if (types.includes('ionogramme')) {
-            var ionogramme = document.getElementById('ionogramme');
-            ionogramme.style.display = 'block';
-            formulairesContainer.appendChild(ionogramme);
-        }
-        if (types.includes('biochimie')) {
-            var biochimie = document.getElementById('biochimie');
-            biochimie.style.display = 'block';
-            formulairesContainer.appendChild(biochimie);
-        }
+
+
+        // Ajoutez un gestionnaire d'événements au bouton de bascule
+        document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
         
-    }
+    
     </script>
 </body>
 </html>

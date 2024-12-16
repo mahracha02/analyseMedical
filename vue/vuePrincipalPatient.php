@@ -26,18 +26,19 @@ foreach ($cheminsCSV as $chemin) {
     foreach ($contenuCSV as $ligne) {
         // Assumant que la date est à la troisième colonne (indice 2)
         $date = $ligne[2];
+        $username = $ligne[1];
         $statut=$ligne[4];
 
         // Stocker la date uniquement si elle n'est pas déjà présente
-        if (!in_array($date, $datesUniques)) {
+        if (!in_array($date, $datesUniques) && $username == $_SESSION["username"]) {
             $datesUniques[] = $date;
         }
 
         //Compteur pour les analyses bien 
-        if($statut == "bien"){
+        if($statut == "bien" && $username == $_SESSION["username"]){
             $analyseBien++;
         }
-        if($statut == "pas bien"){
+        if($statut == "pas bien" && $username == $_SESSION["username"]){
             $analysePasBien++;
         }
     }
@@ -46,7 +47,7 @@ foreach ($cheminsCSV as $chemin) {
 <div id="dashboardContent" class="content-fluid fixed  " style="height:100vh; width:100%" >
         <div class="row">
             <div class="container mt-4 ">
-                <!-- Ajoutez ces balises à l'intérieur de votre tableau de bord -->
+                <!-- Ajoutez ces balises à l'intérieur de  tableau de bord -->
                 <div class="row h-15" style="margin-bottom: 10px;">
                     <!-- Card - Nombre total d'analyses -->
                     <div class="col-md-3">
@@ -55,7 +56,13 @@ foreach ($cheminsCSV as $chemin) {
                                 <h5 class="card-title">Nombre total d'analyses</h5>
                                 <p class="card-text">
                                     <?php
-                                    $nombreTotalAnalyses = count($datesUniques);
+                                    if($username == $_SESSION["username"]){
+                                        $nombreTotalAnalyses = count($datesUniques);
+                                    }
+                                    else{
+                                        $nombreTotalAnalyses = 0;
+                                    }
+                                    
                                     ?>
                                     <div class="card text-center bg-white">
                                         <div class="card-body">
@@ -109,7 +116,12 @@ foreach ($cheminsCSV as $chemin) {
                                     
 
                                     // Trouver la date la plus récente
-                                    $derniereDate = max($datesUniques);
+                                    if($username == $_SESSION["username"]){
+                                        $derniereDate = max($datesUniques);
+                                    }
+                                    else{
+                                        $derniereDate = "Pas d'analyses";
+                                    }
                                     ?>
                                     <div class="card text-center bg-white">
                                         <div class="card-body">
@@ -171,7 +183,10 @@ foreach ($cheminsCSV as $chemin) {
                                     $groupedAnalyses = [];
                                     foreach ($allAnalyses as $analyse) {
                                         $date = $analyse[2]; 
-                                        $groupedAnalyses[$date][] = $analyse;
+                                        $username = $analyse[1];
+                                        if ($username == $_SESSION["username"]) { // Vérification de l'utilisateur
+                                            $groupedAnalyses[$date][] = $analyse;
+                                        }
                                     }
 
                                     // Tri des analyses par date de la plus récente à la plus ancienne
@@ -183,9 +198,9 @@ foreach ($cheminsCSV as $chemin) {
                                     foreach ($groupedAnalyses as $date => $analyses) {
                                         // Compter le nombre d'analyses "bien" et "pas bien"
                                         foreach ($analyses as $analyse) {
-                                            if ($analyse[4] === 'bien') {
+                                            if ($analyse[4] === 'bien' && $username == $_SESSION["username"]) {
                                                 $stats['bien']++;
-                                            } elseif ($analyse[4] === 'pas bien') {
+                                            } elseif ($analyse[4] === 'pas bien' && $username == $_SESSION["username"]) {
                                                 $stats['pasBien']++;
                                             }
                                         }
@@ -236,12 +251,22 @@ foreach ($cheminsCSV as $chemin) {
                                         $stats['pasBien'] = 0;
                                         
                                     }
-                                    
+                                    if (empty($groupedAnalyses)){ ?>
+                                        <!-- Afficher un message stylé si le tableau est vide -->
+                                        <tr>
+                                            <td colspan="3" class="text-center">
+                                                <div class="alert alert-info" role="alert">
+                                                    Aucune analyse disponible.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php }
                                     
                                     ?>
                             </tbody>
                         </table>    
                     </div>
+                    
                    
 
                      <!-- Graphique en forme de donut -->
@@ -252,7 +277,7 @@ foreach ($cheminsCSV as $chemin) {
                   
                     <!-- Coordonnées de l'utilisateur (20%) -->
                     <div class="col-md-3">
-                        <div class="card bg-info text-white  " style="max-height: 420px; margin-top:-10px ">
+                        <div class="card bg-info text-white  " style="max-height: 420px; margin-top:-20px ">
                             <div class="card-body text-center  ">
                                 <!-- Contenu des coordonnées de l'utilisateur ici -->
                                 <img src="photo/logo.png" alt="Photo de profil" class="img-fluid mx-auto rounded-circle mb-2" style="max-width: 150px;">
@@ -278,10 +303,10 @@ foreach ($cheminsCSV as $chemin) {
 
                 <div class="row h-10 ">
                     <!-- Tableau des 12 mois -->
-                    <h2 style="margin-top: -10px;">Analyses des 12 mois :</h2>
-                    <div class="col-md-6 table-responsive" style="max-height: 200px; overflow-y: auto; margin-top:5px" >
+                    <h2 >Analyses des 12 mois :</h2>
+                    <div class="col-md-6 table-responsive" style="max-height: 200px; overflow-y: auto; " >
                         
-                        <table class="table table-bordered" style="margin-top: 15px;" >
+                        <table class="table table-bordered" >
                             <thead>
                                 <tr>
                                     <th>Mois</th>
@@ -315,7 +340,7 @@ foreach ($cheminsCSV as $chemin) {
                    
 
                     <!-- Carte avec les options -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="margin-top: -20px;">
                         <div class="card " >
                             <div class="card-body text-center" style="height: 200px;">
                                 <h5 class="card-title mb-4">Choisir une option pour analyser vos résultats :</h5>
@@ -2203,20 +2228,20 @@ foreach ($cheminsCSV as $chemin) {
                 </div>
             </div>
         </form>
-            <div class="row mt-4 text-center">
-                <div class="col-md-6 mx-auto d-flex justify-content-center">
-                    <button class="btn btn-danger w-40 mr-4" onclick="revenirLuminositeNormaleDetailsAnalyse()">Fermer</button>
-                </div>
+        <div class="row mt-4 text-center">
+            <div class="col-md-6 mx-auto d-flex justify-content-center">
+                <button class="btn btn-danger w-40 mr-4" onclick="revenirLuminositeNormaleDetailsAnalyse()">Fermer</button>
             </div>
-            <div class="row mt-4 text-center mb-4">
-                <div class="col-md-6 mx-auto d-flex justify-content-center">
-                    <button class="btn btn-warning w-40 mr-4">Corriger</button>
-                    <button class="btn btn-danger w-40">Supprimer</button>
-                    <button class="btn btn-primary w-40 ml-4">Télécharger le PDF</button>
-                </div>
+        </div>
+        <div class="row mt-4 text-center mb-4">
+            <div class="col-md-6 mx-auto d-flex justify-content-center">
+                <button class="btn btn-warning w-40 mr-4">Corriger</button>
+                <button class="btn btn-danger w-40">Supprimer</button>
+                <button class="btn btn-primary w-40 ml-4">Télécharger le PDF</button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- mode saisie -->
     <div id="overlay"></div>

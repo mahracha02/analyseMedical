@@ -12,104 +12,11 @@ if(isset($_POST['deconnexion'])){
 }
 
 if (!isset($_SESSION["username"])) {
+    session_destroy();
     header("Location: ./?action=connexion");
     exit();
 }
-/*
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    //recuperation des valeurs des checkbox et si elles sont pas cochées, on les initialise à null
-    $checkboxHematologie = isset($_POST['checkboxHematologie']) ? $_POST['checkboxHematologie'] : null;
-    $checkboxHemogramme = isset($_POST['checkboxHemogramme']) ? $_POST['checkboxHemogramme'] : null;
-    $checkboxFormuleLeucocytaire = isset($_POST['checkboxFormuleLeucocytaire']) ? $_POST['checkboxFormuleLeucocytaire'] : null;
-    $checkboxNumerationPlaquettaire = isset($_POST['checkboxNumerationPlaquettaire']) ? $_POST['checkboxNumerationPlaquettaire'] : null;
-    $checkboxBiochimie = isset($_POST['checkboxBiochimie']) ? $_POST['checkboxBiochimie'] : null;
-    $checkboxIonogrammeSanguin = isset($_POST['checkboxIonogrammeSanguin']) ? $_POST['checkboxIonogrammeSanguin'] : null;
 
-    if(isset($_POST['suivant'])){
-        var_dump($checkboxHematologie);
-        var_dump($checkboxHemogramme);
-        var_dump($checkboxFormuleLeucocytaire);
-        var_dump($checkboxNumerationPlaquettaire);
-        var_dump($checkboxBiochimie);
-        var_dump($checkboxIonogrammeSanguin);
-
-        ?>                   
-        <div class="container " style="margin-top: 100px; max-height:700px; overflow-y: auto;">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-3" style="color: blueviolet;"><b>Formulaire de Saisie Manuellement</b></h5>
-                    <div class="container " id="formulaires" >
-                        <div class="card " >
-                            <div class="card-body">
-                                <!-- Ajoutez vos champs de formulaire ici -->
-                                <form action="./?action=dashboardPatient" method="POST" >
-                                        <div class="container dynamic-cols-container" id="formulairesContainer" >
-                                            <!-- Les formulaires seront ajoutés ici dynamiquement -->
-                                            </div>
-                                    <div class="row mb-3">
-                                        <div class="col-md-12">
-                                            <label for="" class="form-label">Observations :</label>
-                                            <textarea class="form-control" id="" rows="3"></textarea>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Ajoutez un champ de formulaire caché pour chaque case à cocher -->
-                                    <input type="hidden" name="checkboxHematologie" value="<?php echo $checkboxHematologie; ?>">
-                                    <input type="hidden" name="checkboxHemogramme" value="<?php echo $checkboxHemogramme; ?>">
-                                    <input type="hidden" name="checkboxFormuleLeucocytaire" value="<?php echo $checkboxFormuleLeucocytaire; ?>">
-                                    <input type="hidden" name="checkboxNumerationPlaquettaire" value="<?php echo $checkboxNumerationPlaquettaire; ?>">
-                                    <input type="hidden" name="checkboxBiochimie" value="<?php echo $checkboxBiochimie; ?>">
-                                    <input type="hidden" name="checkboxIonogrammeSanguin" value="<?php echo $checkboxIonogrammeSanguin; ?>">
-
-                                    <!-- 3 boutons: PRECEDENT, ANULLER, VALIDER -->
-                                    <div class="row mt-6 text-center " id="boutonsFormulaires" >
-                                        <div class="col-md-4 ">
-                                            <button class="btn btn-primary mt-4 mb-4 " onclick="premiereEtape()">Précédent</button>
-                                        </div>
-                                        <div class="col-md-4 ">
-                                            <button class="btn btn-danger mt-4 mb-4 " onclick="revenirLuminositeNormaleSaisieManuelle()">Annuler</button>
-                                        </div>
-                                        <div class="col-md-4 ">
-                                            <button class="btn btn-success mt-4 mb-4 " type="submit"  name="valider" >Valider</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- afficher message d'erreur -->
-                                <?php
-                                if(isset($_GET['error = 1'])){
-                                    ?>
-                                    <div class="alert alert-danger mt-4" role="alert">
-                                        Erreur lors de la saisie de l'analyse
-                                    </div>
-                                    <?php
-                                    
-                                        
-                                } elseif(isset($_GET['success = 1'])){
-                                    ?>
-                                    <div class="alert alert-success mt-4" role="alert">
-                                        Analyse saisie avec succès
-                                    </div>
-                                    <?php
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php
-    }
-    if(isset($_POST['valider'])){
-        var_dump($checkboxHematologie);
-        var_dump($checkboxHemogramme);
-        var_dump($checkboxFormuleLeucocytaire);
-        var_dump($checkboxNumerationPlaquettaire);
-        var_dump($checkboxBiochimie);
-        var_dump($checkboxIonogrammeSanguin);
-    }
-}
-*/
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     //recuperation des valeurs des checkbox et si elles sont pas cochées, on les initialise à null
     $checkboxHematologie = isset($_POST['checkboxHematologie']) ? $_POST['checkboxHematologie'] : null;

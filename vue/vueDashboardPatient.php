@@ -296,19 +296,6 @@ session_start();
             <button type="button" class="btn btn-primary position-relative mr-14">
                 Notifications <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
             </button>
-<!--
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo $_SESSION["username"]; ?>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Mon compte</a></li>
-                    <li><a class="dropdown-item" href="#">Mes analyses</a></li>
-                    <li><a class="dropdown-item" href="#">Mes messages</a></li>
-                    <li><a class="dropdown-item" href="#">Mes statistiques</a></li>
-                    <li><a class="dropdown-item" href="./?action=deconnexion">Déconnexion</a></li>
-                </ul>
-            </div> -->
 
             
             <div class="icon user-img d-flex align-items-center bg-info text-white text-center" style="height: 48px;">
@@ -342,9 +329,9 @@ session_start();
                         <span class="nav_name">Dashboard</span> 
                     </a> 
 
-                    <a href="./?action=AnalyseSaisie" class="nav_link" id="statisticsMenu">
+                    <a href="./?action=AnalyseSaisiePatient" class="nav_link" id="statisticsMenu">
                         <i class='bx bx-bar-chart-alt-2 nav_icon'></i> 
-                        <span class="nav_name">Statistique</span> 
+                        <span class="nav_name">Analysez-moi</span> 
                     </a>
 
                     <a href="./?action=comptePatient" class="nav_link" id="accountMenu">
@@ -369,42 +356,6 @@ session_start();
         </nav>
     </div>
     
-    <!--
-    <div style="display:none " >
-        <div class="h-25 d-inline-block" style="width: 120px; background-color: lightblue;">Height 25%</div>
-        <div class="h-50 d-inline-block" style="width: 120px; background-color: lightgreen;">Height 50%</div>
-        <div class="h-75 d-inline-block" style="width: 120px; background-color: lightcoral;">Height 75%</div>
-        <div class="h-100 d-inline-block" style="width: 120px; background-color: lightgoldenrodyellow;">Height 100%</div>
-        <div class="h-auto d-inline-block" style="width: 120px; background-color: lightpink;">Height auto</div>
-    </div>  -->
-
-    
-
-    
-  
-
-
-    <!------------------------------------------------------------Partie Mon Compte------------------------------------------------------------------------>
-
-    
-
-
-    <!------------------------------------------------------------Partie Statistique--------------------------------------------------------------------->
-
-    
-
-
-
-   <!------------------------------------------------------------Partie Messages------------------------------------------------------------------------> 
-
-    
-            
-
-
-    
-
-
-
     <script>
             
                 
@@ -533,17 +484,7 @@ session_start();
             // Supprimez la classe pour revenir à la luminosité normale et désactiver l'overlay
             $('body').removeClass('saisie-mode');
 
-            $('#step1').show(); // Affichez la première étape
-
-            // Cachez le formulaire
-            $('#saisieManuelleForm').hide();
-            $('#formulaires').hide();
-            $('#hemogramme').hide();
-            $('#hematologie').hide();
-            $('#formuleLeucocytaire').hide();
-            $('#numerotationPlaquettaire').hide();
-            $('#ionogramme').hide();
-            $('#biochimie').hide();
+            
 
             // decocher les checkbox
             var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
